@@ -129,6 +129,90 @@ Implementar los algoritmos de \textit{Backward} y \textit{Forward substitution}.
 
 \begin{solution}
 
+Para poder obtener un algoritmo que ejecute una \textbf{substitución \textit{forward}} es necesario un sistema de ecuaciones lineales
+cuya matriz es triangular inferior. Es decir, el sistema se puede expresar de la forma
+\begin{align}
+    L y = b
+\end{align}
+donde L es una matriz triangular inferior. Otra forma de verlo es por medio de la expansión 
+\begin{align*}
+    \begin{pmatrix}
+        l_{11} & 0 & 0 & \cdots  & 0 \\ 
+        l_{21} & l_{22} &0 & \cdots  & 0 \\ 
+        l_{31} & l_{32} & l_{33} & \cdots  & 0 \\ 
+         \vdots & \vdots & \vdots & \ddots  & \vdots\\ 
+         l_{m1}& l_{m2}  & l_{m3}& \cdots & l_{mm}
+        \end{pmatrix}
+        \begin{pmatrix}
+        y_1\\ 
+        y_2\\ 
+        y_3\\
+        \vdots \\ 
+        y_m
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+        b_1\\ 
+        b_2\\ 
+        b_3\\
+        \vdots \\ 
+        b_m
+        \end{pmatrix}        
+\end{align*}
+
+Así tenemos,
+\begin{align}
+    y_1 &= \frac{b_1}{l_{11}}, \nonumber\\
+    y_2 &= \frac{b_2 -  l_{21} y_2 }{l_{22}},\nonumber\\
+    &\vdots \nonumber \\
+    y_j &= \frac{\left (b_j - l_{j1}y_1 -l_{j2}y_2 -\cdots-l_{j,j-1}y_{j-1} \right )}{l_{jj}}, \:\:\:\:\:\:\:\:\: 2 \leq j \leq m.
+    \label{1.03}
+\end{align}
+
+
+Para la implementación de dicho algoritmo es necesario anidar dos ciclos for. Se crea una variable auxiliar llamada aux, la cual el ciclo for interno suma los terminos $l_{j1}y_1 +l_{j2}y_2 + \cdots + l_{j,j-1}y_{j-1}$ para posteriormente usar (\ref{1.03})
+
+\begin{lstlisting}
+for i in range(len(b)):
+    aux = 0    
+    for j in range(i):
+        aux += L[i,j]*y[j]   #Auxiliar variable
+    y[i] = (b[i] - aux)/L[i,i]   # 'y' is the output and solution to the system of equations.
+\end{lstlisting}
+
+Por otro lado, la implementación de la \textbf{ substitución \textit{backward}} es análogo al algoritmo previo. Consideremos el sistema de ecuaciones lineales
+\begin{align}
+    Ux = b
+\end{align}
+donde $U$ es una matriz triangular superior. La expansión es de la forma
+\begin{align*}
+    \begin{pmatrix}
+        u_{11} & u_{12} & u_{13} & \cdots  & u_{1m} \\ 
+        \vdots & \vdots & \vdots & \ddots  & \vdots\\ 
+        0 &0 & u_{m-2,m-2} & u_{m-2,m-1}   & u_{m-2,m} \\
+        0 & 0 &  0 &u_{m-1,m-1} & u_{m-1,m} \\
+        0 & 0  & 0& 0 & u_{mm}
+        \end{pmatrix}
+        \begin{pmatrix}
+        x_1\\ 
+        \vdots \\
+        x_{m-2}\\ 
+        x_{m-1}\\ 
+        x_m
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+        b_1\\ 
+        \vdots \\ 
+        b_{m-2}\\ 
+        b_{m-1}\\
+        b_m
+        \end{pmatrix}  
+\end{align*}
+
+
+
+
 \end{solution}
 	
 \begin{problem}{2}
@@ -141,7 +225,7 @@ Implementar los algoritmos de \textit{Backward} y \textit{Forward substitution}.
         A = \begin{pmatrix}
             1 &0  &0  &0 &1 \\ 
             -1 &1  &0  &0 &1 \\ 
-            -1 &1  &1 &0  &1 \\ 
+            -1 &-1  &1 &0  &1 \\ 
             -1 &-1  &-1  &1 &1\\
             -1 & -1 & -1 & -1 &1 
             \end{pmatrix}
@@ -159,11 +243,11 @@ Implementar los algoritmos de \textit{Backward} y \textit{Forward substitution}.
 \end{problem}
 
 
-\begin{problem}{4}
+\begin{problem}{5}
     Implementar el algoritmo de descomposición de Cholesky 23.1 del Trefethen (p. 175).
 \end{problem}
 
-\begin{problem}{5}
+\begin{problem}{6}
     Comparar la complejidad de su implementación de los algoritmos de factorización de Cholesky y LUP mediante la medición de los tiempos que tardan con respecto a la descomposición de una matriz aleatoria hermitiana definida positiva. Graficar la comparación.
 \end{problem}
 \end{document}
