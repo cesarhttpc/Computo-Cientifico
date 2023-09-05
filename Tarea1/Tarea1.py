@@ -48,35 +48,39 @@ def forward(L,b):
     This funtion solves a system of linear equations where the matrix of the coefficient form a lower triangular matrix.
 
     '''
-    y = np.zeros(len(b))
+    
+    try:
+        y = np.zeros(len(b))
 
-    for i in range(len(b)):
-        aux = 0    
-        for j in range(i):
-            aux += L[i,j]*y[j]   #Auxiliar variable that count the sum of the terms for the multiplication of L_i and y.
-        y[i] = (b[i] - aux)/L[i,i]   # Form obtained by 'despeje' of the variable of interest.
-    return y
+        for i in range(len(b)):
+            aux = 0    
+            for j in range(i):
+                aux += L[i,j]*y[j]   #Auxiliar variable that count the sum of the terms for the multiplication of L_i and y.
+            y[i] = (b[i] - aux)/L[i,i]   # Form obtained by 'despeje' of the variable of interest.
+        return y
+    except:
+        print("The system of equation can't be solved")
 
-def backward1(U,b):
+def backward(U,b):
     '''
     Backward substitution
     
     This funtion solves a system of linear equations where the matrix of the coefficient form a upper triangular matrix.
     
     '''
-    #Trasform the matrix of coeffient to a lower triangular matrix an we call the forward substitution.
-    dimention = U.shape
-    L = np.zeros(dimention) 
 
-    m = dimention[0]
-    b_inv = np.zeros([m])
+    try:
+        x = np.zeros(len(b))
+        m = len(b)
 
-    for i in range(m):  
-        L[i,:] = U[m-i-1]
-        b_inv[i] = b[m-i-1]
-
-    print(b_inv)
-    return forward(L,b_inv)
+        for i in range(m):
+            aux = 0
+            for j in range(i):
+                aux += U[m-i-1,m-j-1] * x[m-j-1]      #Auxiliar variable that count the sum of the terms for the multiplication of U and x.
+            x[m-i-1] = (b[m-i-1] - aux)/U[m-i-1,m-i-1]    # Form obtained by 'despeje' of the variable of interest.
+        return x
+    except:
+        print("The system of equations can't be solved")
 
 def LUP(A):
     '''
@@ -119,59 +123,26 @@ def LUP(A):
     
     return L,U,P
 
-
-
-U = np.array([[1,1,1],[0,1,1],[0,0,1]], dtype=float)
-b = np.array([1,1,1],dtype=float)
-
-x = np.zeros(len(b))
-m = len(b)
-
-for i in range(m):
-    aux = 0
-    for j in range(m-i-1):
-        aux += U[i,j]
-
-
-
-#%%
-
-m = 6
-for i in range(m-1,-1,-1):
-    print(i)
-
-
-
-
-#%%
-
-
-
-
-
-
-
-
-
-
-
 #Main
 
 # If --name-- == "__main__":
 
 # Ejercicio 3
 
-# A = np.array([[1,0,0,0,1],[-1,1,0,0,1],[-1,-1,1,0,1],[-1,-1,-1,1,1],[-1,-1,-1,-1,1]],dtype = float)
-# print("La factoriazación nos da que \n L: \n",LUP(A)[0],"\n U: \n",LUP(A)[1],"\n P:\n",LUP(A)[2])
+# A1 = np.array([[1,0,0,0,1],[-1,1,0,0,1],[-1,-1,1,0,1],[-1,-1,-1,1,1],[-1,-1,-1,-1,1]],dtype = float)
 
+A2 = uniform.rvs(0,1,5)
+
+help(uniform)
+print(A2)
+
+# L,U,P = LUP(A2)
+# print("La factoriazación nos da que \n L: \n",L,"\n U: \n", U ,"\n P:\n",P)
 
 # b = uniform.rvs(size=5)
-
-# L,U,P = LUP(A)
-
-# print(P@b)
+# # print(P@b)
 # y = forward(L,P@b)
-# print(y)
+# # print(y)
 
 # x = backward(U,y)
 # print(x)
@@ -201,9 +172,16 @@ for i in range(m-1,-1,-1):
 # b = np.array([20,3,15,2])
 # print(backward(U,b))
 
-## Ejemplo 4.5
+# Ejemplo backward
+# U = np.array([[2,1,3],[0,5,4],[0,0,8]], dtype=float)
+# b = np.array([16,33,16],dtype=float)
+
 # U = np.array([[1,1,1],[0,1,1],[0,0,1]], dtype=float)
-# b = np.array([1,1,1],dtype=float)
+# b = np.array([6,3,1],dtype=float)
+
+# U = np.array([[2,1,-3,1],[0,1,-4,-1],[0,0,4,5],[0,0,0,3]], dtype=float)
+# b = np.array([16,33,16,9], dtype=float)
+
 # print(backward(U,b))
 
 
@@ -222,5 +200,3 @@ for i in range(m-1,-1,-1):
 
 
 
-
-## %%
