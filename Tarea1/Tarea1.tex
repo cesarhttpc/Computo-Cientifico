@@ -212,10 +212,23 @@ donde $U$ es una matriz triangular superior. La expansión es de la forma
 
 De esta forma
 \begin{align}
-    x_{mm} &= \frac{b_m}{u_{mm}},\\
-    x_{m-1,m-1} &= \frac{b_{m-1} - u_{m-1,m}x_m}{u_{m-1,m-1}},\\
+    x_{mm} &= \frac{b_m}{u_{mm}}, \nonumber\\
+    x_{m-1,m-1} &= \frac{b_{m-1} - u_{m-1,m}x_m}{u_{m-1,m-1}},\nonumber \\
+    \vdots\nonumber\\
+    x_{i,i} &= \frac{b_{m-1} - u_{i,m}x_m - u_{i,m-1}x_{m-1}-\cdots-u_{i,m-i-1}x_{m-i-1}}{u_{i,i}}
+    \label{1.04}
 \end{align}
 
+La implementación del algoritmo para la substitución \textit{backward} es análago. La diferencia sustancial entre ambos se encuetra en que los indices de los vectores deben de correr al reves. Dicha implementación se fundamenta en el siguiente código.
+\begin{lstlisting}
+for i in range(m):
+        aux = 0
+        for j in range(i):
+            aux += U[m-i-1,m-j-1] * x[m-j-1]      #Auxiliar variable
+        x[m-i-1] = (b[m-i-1] - aux)/U[m-i-1,m-i-1]    # Form obtained by 'despeje' of the variable of interest.
+\end{lstlisting}
+
+Lo que completa la implementación de ambos métodos.
 
 \end{solution}
 	
@@ -223,6 +236,42 @@ De esta forma
     Implementar el algoritmo de eliminación Gaussiana con pivoteo parcial LUP, 21.1 del Trefethen (p. 160).
 \end{problem}
     
+\begin{solution}
+La implementación es directa del pseudocódigo. Sea $A$ una matriz numpy. Se crean tres matrices vacias (nulas) donde se almacenarán a L,U y P.
+
+\begin{lstlisting}
+U = A.copy()
+L = np.identity(m,dtype= float)
+P = np.identity(m,dtype= float)
+\end{lstlisting}
+
+Es importante resaltar que la matriz $U$ requiere ser una copia de A. Sin el metodo copy() el lenguage solamente haría referencia a la dirección de memoria y esta se modificaría.
+
+La generalización de la factorización LU con pivoteo se sigue de una serie de modificaciones iterativas (cambios de renglos) dentro del primer for anidado. Es entonces que se pide encontrar el indice de la fila que hace que el valor k-ésimo de la columna se maximice. Esto se implementó con el siguiente código.
+
+\begin{lstlisting}
+    for k in range(m-1):
+
+    Index_max = k
+    maxi = U[k,k]
+
+        for i in range(k, m):  #This cicle for stan for check the maximum of the k-column.
+            if abs(U[i,k]) > abs(maxi):
+                maxi = U[i,k]
+                Index_max = i
+\end{lstlisting}
+
+Lo siguiente a realizar es un cambio de renglones en las matrices L,U y P. Los cambios de L y P son directos ya que se cambia todo el renglon. Sin embargo, los cambios de L son más delicados pues solo se cambia una parte de cada renglon. Esto con el código siguiente:
+\begin{lstlisting}
+    AuxRowL = L[k,: k].copy()
+    L[k,: k] = L[Index_max,: k]
+    L[Index_max,: k] = AuxRowL
+\end{lstlisting}
+
+Posteriormente se finaliza el método al anidar el segundo ciclo for mismo que en la factorización LU convencional. Los detalles se encuentra en el script adjunto.
+
+\end{solution}
+
 \begin{problem}{3}
     Dar la descomposición LUP para una matriz aleatoria de entradas U(0,1) de tamaño 5$\times 5$, y para la matriz
     \begin{align}
@@ -233,10 +282,75 @@ De esta forma
             -1 &-1  &-1  &1 &1\\
             -1 & -1 & -1 & -1 &1 
             \end{pmatrix}
+    \label{1.07}
     \end{align}
 \end{problem}
 
-% Que listo es usted profe
+\begin{solution}    
+
+Para la matriz dada, se manda a llamar la función $LUP(A)$ donde la matriz A es la función a factorizar.
+
+El resultado de la descomposición $PA = LU$ es
+\begin{align}
+    A
+    =
+    \begin{bmatrix}
+        1. & 0. & 0. & 0. & 0.\\
+        -1. & 1. & 0. & 0. & 0.\\
+        -1. & -1. & 1. & 0. & 0.\\
+        -1. & -1. & -1. & 1. & 0.\\
+        -1. & -1. & -1. & -1. & 1.\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        1. & 0. & 0. & 0. & 1.\\
+        0. & 1. & 0. & 0. & 2.\\
+        0. & 0. & 1. & 0. & 4.\\
+        0. & 0. & 0. & 1. & 8.\\
+        0. & 0. & 0. & 0. & 16.\\
+      \end{bmatrix}
+\end{align}
+donde para este caso particular $P$ es la matriz identidad.
+
+Usando la paqueteria de Scipy, se implementó el generador de matrices y vectores con entradas aleatorios con distribución uniforme (0,1). Además, se ajusto una \textit{semilla} para mayor control de la matriz aleatoria. La matriz generada es:
+\begin{align*}
+    D =
+    \begin{bmatrix}
+        0.15416284 & 0.7400497 & 0.26331502 & 0.53373939 & 0.01457496\\
+        0.91874701 & 0.90071485 & 0.03342143 & 0.95694934 & 0.13720932\\
+        0.28382835 & 0.60608318 & 0.94422514 & 0.85273554 & 0.00225923\\
+        0.52122603 & 0.55203763 & 0.48537741 & 0.76813415 & 0.16071675\\
+        0.76456045 & 0.0208098 & 0.13521018 & 0.11627302 & 0.30989758\\
+      \end{bmatrix}
+\end{align*}
+Su descomposición LU es tal que
+\begin{align*}
+    P &=
+    \begin{bmatrix}
+        0. & 1. & 0. & 0. & 0.\\
+        0. & 0. & 0. & 0. & 1.\\
+        0. & 0. & 1. & 0. & 0.\\
+        1. & 0. & 0. & 0. & 0.\\
+        0. & 0. & 0. & 1. & 0.\\
+      \end{bmatrix},\\
+      L &= \begin{bmatrix}
+        1. & 0. & 0. & 0. & 0.\\
+        0.83217735 & 1. & 0. & 0. & 0.\\
+        0.30892983 & -0.44984958 & 1. & 0. & 0.\\
+        0.16779684 & -0.80811921 & 0.35073561 & 1. & 0.\\
+        0.56732269 & -0.05631829 & 0.48102103 & -0.24994986 & 1.\\
+      \end{bmatrix},\\
+      U &= \begin{bmatrix}
+        0.91874701 & 0.90071485 & 0.03342143 & 0.95694934 & 0.13720932\\
+        0. & -0.7287447 & 0.10739762 & -0.68007855 & 0.1957151\\
+        0. & 0. & 0.98221304 & 0.2511723 & 0.04791354\\
+        0. & 0. & 0. & -0.26451328 & 0.13290782\\
+        0. & 0. & 0. & 0. & 0.10407\\
+      \end{bmatrix}
+\end{align*}
+
+lo que concluye el ejercicio.
+
+\end{solution}
 
 \begin{problem}{4}
     Usando la descomposición LUP anterior, resolver el sistema de la forma
@@ -246,12 +360,164 @@ De esta forma
     donde $D$ son las matrices del problema 3, para 5 diferentes $b$ aleatorios con entradas $U(0,1)$. Verificando si es posible o no resolver el sistema.
 \end{problem}
 
+\begin{solution}
+Para resolver el sisteme $Ax = b$ con el método de descomposición LU con pivoteo necesitamos hacer manipulaciones algebraicas. Notemos que
+\begin{align*}
+    A x &= b,\\
+    PA x &= Pb,\\
+    LU x &= Pb,\\
+    L y &= Pb,\\
+    \intertext{donde}
+    U x &= y 
+\end{align*}
+Por tanto, es necesario resolver con \textit{backward substitution} para obtener $y$, luego con \textit{forward substitution} se puede resolver para x. Esto siempre y cuando el sistema tenga solución única.
+
+La función definida en el script, a manera de sumario es
+\begin{lstlisting}
+def LinearSystem(A,b):
+    try:   
+        L,U,P = LUP(A)
+
+        y = forward(L,P@b)
+        x = backward(U,y)
+    except:
+        print("The system of equations do not have a unique solution")
+        
+    return x
+\end{lstlisting}
+que intenta resolver el sistema por medio de la factorización LU con pivoteo. Si se da el caso de que la matriz es degenerada o cercana a una degenerada, entonces saltará un error e imprimirá que no hay solución.
+
+Debido a que son 5 vectores b aleatorios, solo presentaremos uno y el resto se podrán obtener tras compilar el código correspondiente.
+
+Para el sistema $Ax = b$
+\begin{align*}
+    \begin{bmatrix}
+        1. & 0. & 0. & 0. & 1.\\
+        -1. & 1. & 0. & 0. & 1.\\
+        -1. & -1. & 1. & 0. & 1.\\
+        -1. & -1. & -1. & 1. & 1.\\
+        -1. & -1. & -1. & -1. & 1.\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        x_{1} \\x_{2} \\ x_{3} \\ x_{4} \\ x_{5}\\
+      \end{bmatrix} = 
+      \begin{bmatrix}
+        0.15416284 \\ 0.7400497 \\ 0.26331502 \\ 0.53373939 \\ 0.01457496\\
+      \end{bmatrix}
+\end{align*}
+donde la solución es dada por
+\begin{align*}
+    \begin{bmatrix}
+        x_{1} \\x_{2} \\ x_{3} \\ x_{4} \\ x_{5}\\
+    \end{bmatrix} =\begin{bmatrix}
+        -0.17511503 \\ 0.2356568 \\ -0.00542108 \\ 0.25958222 \\ 0.32927787\\
+    \end{bmatrix}
+\end{align*}
+
+Para matrices aleatorias funciona igual.
+
+\end{solution}
 
 \begin{problem}{5}
     Implementar el algoritmo de descomposición de Cholesky 23.1 del Trefethen (p. 175).
 \end{problem}
 
+\begin{solution}
+    
+La descomposición de Cholesky funciona exclusivamente para matrices hermitianas (simétricas) y positivas definidas. Consideremos la matriz A y construyamos una matriz con las carácteristicas anteriormente mencionadas. Tomemos $D =A^*A$. Es claro que $D*= A^* A$, es decir $D^* = D$ una matriz hermitiana. Luego tomemos un vector $x \in \mathbb{C}^m $
+e investiguemos 
+\begin{align*}
+    x^* D x &= x^* A^*A x,\\
+    &= (Ax)^* Ax,\\
+    &= ||Ax||^2 \geq 0
+\end{align*}
+para $x \neq 0$ define una matrix definida positiva.
+
+La implementación es directa del pseudocódigo. A manera de sumario:
+\begin{lstlisting}
+def cholesky(D):
+    
+    import numpy as np
+    R = D.copy()
+    m = np.shape(D)[0]
+
+    for k in range(m):
+        for j in range(k+1,m):
+            
+            R[j,j:] = R[j,j:] - R[k,j:] * (R[k,j]/R[k,k])
+
+        R[k,k:] = R[k,k:]/np.sqrt(R[k,k])
+\end{lstlisting}
+
+debido a que el algoritmo reescribe sobre la matriz R, entonces la diagonal inferor debería anularse por lo que es necesario construir un algoritmo para la limpia de dicho R. Esto simpliemente con el comando
+\begin{lstlisting}
+    for i in range(m):
+        for j in range(i):
+            R[i,j] = 0
+\end{lstlisting}
+que anula cada elemento debajo de la identidad.
+
+Usando la matrix (\ref{1.07}) podemos construir de la forma ya mencionada la matriz de entrada a Cholesky. La matriz $D$ es
+\begin{align*}
+    D = \begin{bmatrix}
+        5. & 2. & 1. & 0. & -3.\\
+        2. & 4. & 1. & 0. & -2.\\
+        1. & 1. & 3. & 0. & -1.\\
+        0. & 0. & 0. & 2. & 0.\\
+        -3. & -2. & -1. & 0. & 5.\\
+      \end{bmatrix}
+\end{align*}
+cuya factorización es $D = R^* R$ con 
+\begin{align*}
+    R = \begin{bmatrix}
+        2.23606798 & 0.89442719 & 0.4472136 & 0. & -1.34164079\\
+        0. & 1.78885438 & 0.3354102 & 0. & -0.4472136\\
+        0. & 0. & 1.63935963 & 0. & -0.15249857\\
+        0. & 0. & 0. & 1.41421356 & 0.\\
+        0. & 0. & 0. & 0. & 1.72532437\\
+      \end{bmatrix}
+\end{align*}
+lo que concluye la implementación.
+
+\end{solution}
+
+
+
 \begin{problem}{6}
     Comparar la complejidad de su implementación de los algoritmos de factorización de Cholesky y LUP mediante la medición de los tiempos que tardan con respecto a la descomposición de una matriz aleatoria hermitiana definida positiva. Graficar la comparación.
 \end{problem}
+
+\begin{solution}
+    
+Mediante la paquetería time podemos medir la \textit{hora} en nanoseundos. Ahora buscamos medir el tiempo de ejecución de un programa en función del tamaño de la matriz de entrada para cada uno de los dos métodos de factorización vistos. 
+
+Con el código podemos guardar el resultado del tiempo de ejecución
+\begin{lstlisting}
+
+inicio = time.time()
+LUP(A)
+fin = time.time()
+
+tiempoLU[i] = fin - inicio
+\end{lstlisting}
+para el caso de LUP. El caso Cholesky es similar. Luego graficamos dichos tiempos para matrices que van desde $\mathbb{R}^{1\times 1}$ hasta $\mathbb{R}^{600 \times 600}$ 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 13 cm]{Figures/output2.png}
+    \caption{Tiempo de ejecución de los métodos de factorización LU y Cholesky}
+\end{figure}
+
+Observemos que ambos procesos parecen tener el tiempo creciente de orden polinomial. También podemos notar que el método LU es mas complejo pues usa mas operaciones que el método de Cholesky.
+
+
+
+
+
+
+
+
+\end{solution}
+
+
 \end{document}

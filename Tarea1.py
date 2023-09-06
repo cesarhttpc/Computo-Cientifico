@@ -3,8 +3,7 @@ import numpy as np
 from scipy.stats import uniform
 from funciones import forward, backward, LUP, LinearSystem, cholesky
 import time
-
-
+import matplotlib.pyplot as plt
 
 # if __name__ == "__main__":
 
@@ -58,5 +57,38 @@ print("La matriz R es : \n",R)
 
 print("Comprobamos que en efecto es factorizacion")
 print("El producto de R*R: \n" ,np.transpose(R) @ R)
+
+n = 60   #600
+tiempoLU = np.zeros(n)
+tiempoChl = np.zeros(n)
+
+for i in range(1,n):
+
+    A = uniform.rvs(0,1,(i,i))
+
+    #Tiempo de ejecución para factorización LUP
+    inicio = time.time()
+    LUP(A)
+    fin = time.time()
+
+    tiempoLU[i] = fin - inicio
+
+    #Tiempo de ejecución para Cholesky
+    inicio = time.time()
+    cholesky(A.T@A)
+    fin = time.time()
+
+    tiempoChl[i] = fin - inicio
+
+
+plt.plot(tiempoLU,label = "L U")
+plt.plot(tiempoChl,label = "Cholesky")
+plt.xlabel("Tamaño (n) ")
+plt.ylabel("Tiempo (ns)")
+plt.title("Orden de los algoritmos")
+plt.legend()
+
+
+
 
 
