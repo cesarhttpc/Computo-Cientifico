@@ -1,7 +1,7 @@
 ## %%
 import numpy as np
 from scipy.stats import uniform
-from funciones import forward, backward, LUP, LinearSystem, cholesky
+from funciones1 import forward, backward, LUP, LinearSystem, cholesky
 import time
 import matplotlib.pyplot as plt
 
