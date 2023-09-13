@@ -122,21 +122,182 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\setlength{\parskip}{\medskipamount}
 	\setlength{\parindent}{0pt}
- 
+%/////////// Ejercicio 1 /////////////////
 \begin{problem}{1}
     Implementar el algoritmo de Gram-Schmidt modificado 8.1 del Trefethen (p.58) para generar la descomoposición QR.
 \end{problem}
 
+\begin{solution}
+Usando la tería de los proyectores ortogonales es que se encuetra un algoritmo mas \textit{estable} para hacer Gram-Schmidt. Es decir se tiene un algoritmo para hacer factorización QR reducida. 
+
+El algoritmo implementado es tal que se ingresa una matriz $A$ de dimensiones $m \times n$ y regresa una factoriazión de la forma
+\begin{align*}
+    A = \hat{Q} \hat{R}
+\end{align*}
+donde $\hat{Q}$ y $\hat{R}$ son matrices de dimensión $m \times n$ y $n \times n $, respectivamente. Además la matriz $\hat{R}$ es una matriz triangular superior. 
+
+El código implementado en Python se basa en lo siguiente
+\begin{lstlisting}
+    for i in range(n):
+        
+        R[i,i] = np.sqrt(np.dot(V[:,i],V[:,i]))
+        Q[:,i] = V[:,i] / R[i,i]
+
+        for j in range(i+1,n):
+
+            R[i,j] = np.dot(Q[:,i], V[:,j]) 
+            V[:,j] = V[:,j] - R[i,j] * Q[:,i]
+\end{lstlisting}
+
+donde el vector $V$ es una copia de la matriz de entrada 
+$A$.
+
+Por dar un ejemplo consideremos que se desea factorizar la matriz
+\begin{align*}
+    \begin{bmatrix}
+        1 & 2 & 2\\
+        2 & 0 & 2\\
+        0 & 1 & 2\\
+    \end{bmatrix}
+\end{align*}
+tras aplicar la función GramSchmidt a la matriz A resulta en 
+\begin{align*}
+    A = QR = 
+    \begin{bmatrix}
+        0.4472136 & 0.78072006 & -0.43643578\\
+        0.89442719 & -0.39036003 & 0.21821789\\
+        0. & 0.48795004 & 0.87287156\\
+    \end{bmatrix}
+    \begin{bmatrix}
+        2.23606798 & 0.89442719 & 2.68328157\\
+        0. & 2.04939015 & 1.75662013\\
+        0. & 0. & 1.30930734\\
+    \end{bmatrix}
+\end{align*}
+que tras hacer la multiplicación matricial de la derecha se comprueba que es en efecto una factorización de A.
+
+\end{solution}
+
+
+%/////////// Ejercicio 2 /////////////////
 \begin{problem}{2}
     Implementar el algoritmo que calcula el estimador de mínimos cuadrados de una regresión usando la descomposición QR.
 \end{problem}
 
+\begin{solution}
+
+Consideremos el problema de mínimos cuadrados donde nos interesa encontrar $\hat{x }$ que minimice la relación en $b = Ax$ bajo la norma en $L^2$
+\begin{align}
+    \hat{x} = argmin_{x}||b - Ax||
+    \label{2.01}
+\end{align}
+
+Sabemos que la solución a (\ref{2.01}) es
+\begin{align*}
+    y = A x 
+\end{align*}
+donde $Pb = y$ y $P = QQ*$ es el proyector ortogonal. Luego el estimador de minimos cuadrados satisface
+\begin{align}
+    QQ*b &= QR\hat{x },\nonumber \\
+    Q*b &= R\hat{x}
+    \label{2.02}
+\end{align}
+por lo que resta resolver el sistema de ecuaciones, y como $R$ es una matriz triangular superior, entonces por medio de \textit{backward subsection} se obtiene el estimador de mínimos cuadrados.
+
+Por dar un ejemplo, consideremos la matriz de diseño
+\begin{align*}
+    A = 
+    \begin{bmatrix}
+        1 & 2 & 0\\
+        1 & 7 & 2\\
+        1 & 7 & 9\\
+        1 & 4 & 5\\
+      \end{bmatrix}
+\end{align*}
+y vector respuesta
+\begin{align*}
+    b = 
+    \begin{bmatrix}
+        1\\
+        2\\
+        3\\
+        1\\
+      \end{bmatrix}
+\end{align*}
+por tanto usando la función construida para hacer descomposión QR y los comandos 
+\begin{lstlisting}
+
+A = np.array([[1,2,0],[1,7,2],[1,7,9],[1,4,5]])
+
+b = np.array([[1],[2],[3],[1]])
+
+Q, R = GramSchmidtModified(A)
+
+b_hat = Q.T @ b
+
+x = backward(R,bhat)
+
+\end{lstlisting}
+
+Tenemos las siguientes matrices
+\begin{align*}
+    QR = 
+    \begin{bmatrix}
+        0.5 & -0.70710678 & -0.21320072\\
+        0.5 & 0.47140452 & -0.71066905\\
+        0.5 & 0.47140452 & 0.56853524\\
+        0.5 & -0.23570226 & 0.35533453\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        2. & 10. & 8.\\
+        0. & 4.24264069 & 4.00693843\\
+        0. & 0. & 5.47215172\\
+      \end{bmatrix}
+\end{align*}
+
+Además se obtiene el resultado, que es el estimador de mínimos cuadrados 
+\begin{align}
+    \hat{x } = \begin{bmatrix}
+        0.13961039\\ 0.25974026 \\ 0.07792208\\
+      \end{bmatrix}
+      \label{2.03}
+\end{align}
+
+por tanto el modelo de regresión lineal es
+\begin{align}
+    b_i = x_1 + a_{i1} x_2 + a_{i3}  x_3
+\end{align}
+donde los $x_i$ están dados en (\ref{2.03}).
+
+\end{solution}
+
+
+
+
 \begin{problem}{3}
-    Generar $\mathbf{Y }$ compuesto de $y_i = sen (x_i ) +\epsilon_i $ donde $\epsilon_i \sim N(0,\sigma)$ con $\sigma = 0.11$ para $x_i = \frac{4\pi i }{n }$ para $i = 1,\cdots, n$
+    Generar $\mathbf{Y }$ compuesto de $y_i = sen (x_i ) +\epsilon_i $ donde $\epsilon_i \sim N(0,\sigma)$ con $\sigma = 0.11$ para $x_i = \frac{4\pi i }{n }$ para $i = 1,\cdots, n$. 
+
+    Hacer un ajuste de mínimos cuadrados a \textbf{Y}, con descomposición QR, ajustando un polinomio de grado $p-1$.
+    \begin{enumerate}
+        \item Considerar los 12 casos: p = 3,4,6, 100 y n = 100, 1000, 10000.
+        \item Graficar el ajuste en cada caso.
+        \item Medir el tiempo de ejecución de su algoritmo, comparar con la descomposición QR de scipy y graficar los resultados.
+    \end{enumerate}
 \end{problem}
+
+\begin{solution}
+    
+
+
+\end{solution}
+
 
 \begin{problem}{4}
     Hacer $p = 0.1n$, o sea, diez veces más observaciones que coeficientes en la regresión, ?` Cuál es la $n$ máxima que puede generar su computadora?
 \end{problem}
+
+\begin{solution}
+    
+\end{solution}
 
 \end{document}

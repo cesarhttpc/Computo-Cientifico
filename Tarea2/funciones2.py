@@ -1,4 +1,3 @@
-
 def backward(U,b):
     '''
     Backward substitution
@@ -78,14 +77,14 @@ def GramSchmidtModified(A):
             By the comand:
 
             A = np.array([[2,1,2],[1,0,-3],[1,10,11]])
-            GramSchmidtModified(A)[0]
+            GramSchmidtModified(A)
     
     '''
     import numpy as np
     m,n = np.shape(A)
     V = np.zeros([m,n])
-    R = np.zeros([n,n])
     Q = np.zeros([m,n])
+    R = np.zeros([n,n])
 
     for i in range(n):
         
@@ -103,3 +102,20 @@ def GramSchmidtModified(A):
 
 
     return Q, R
+
+def bmatrix(a):
+    """Returns a LaTeX bmatrix
+
+    :a: numpy array
+    :returns: LaTeX bmatrix as a string
+    """
+    import numpy as np
+
+    if len(a.shape) > 2:
+        raise ValueError('bmatrix can at most display two dimensions')
+    lines = str(a).replace('[', '').replace(']', '').splitlines()
+    rv = [r'\begin{bmatrix}']
+    rv += ['  ' + ' & '.join(l.split()) + r'\\' for l in lines]
+    rv +=  [r'\end{bmatrix}']
+    return '\n'.join(rv)
+

@@ -2,6 +2,7 @@
 import numpy as np
 import time
 from funciones2 import backward, GramSchmidtModified
+from scipy.stats import norm
 
 
 # Ejercicio 1
@@ -43,9 +44,33 @@ Q, R = GramSchmidtModified(A)
 
 b_hat = Q.T @ b
 x = backward(R,b_hat)
-
 print("los coeficientes son: \n", x)
 
+# Ejercicio 3
+
+# print("\n\n\n\n")
+
+# n = 17
+
+# mu = 0
+# sigma = 0.11
+# error = norm.rvs(mu,sigma,n)
+
+# x = np.zeros(n)
+
+# for i in range(n):
+#     x[i] = 4*np.pi * (i+1) / n
+
+# senx = np.sin(x)
+
+# y = senx + error
+
+
+
+
+
+# print(y)
+# print(error)
 
 
 
