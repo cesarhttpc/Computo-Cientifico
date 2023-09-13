@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  12 SEP 2023 19:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  13 SEP 2023 03:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -854,10 +854,83 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 277.
  [2]
+<Figures/fig1.png, id=51, 462.528pt x 346.896pt>
+File: Figures/fig1.png Graphic file (type png)
+<use Figures/fig1.png>
+Package pdftex.def Info: Figures/fig1.png  used on input line 293.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+<Figures/fig2.png, id=52, 462.528pt x 346.896pt>
+File: Figures/fig2.png Graphic file (type png)
+<use Figures/fig2.png>
+Package pdftex.def Info: Figures/fig2.png  used on input line 299.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+ [3 <./Figures/fig1.png>]
+<Figures/fig3.png, id=62, 462.528pt x 346.896pt>
+File: Figures/fig3.png Graphic file (type png)
+<use Figures/fig3.png>
+Package pdftex.def Info: Figures/fig3.png  used on input line 305.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+<Figures/fig4.png, id=63, 462.528pt x 346.896pt>
+File: Figures/fig4.png Graphic file (type png)
+<use Figures/fig4.png>
+Package pdftex.def Info: Figures/fig4.png  used on input line 311.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+ [4 <./Figures/fig2.png> <./Figures/fig3.png>]
+<Figures/fig5.png, id=70, 462.528pt x 346.896pt>
+File: Figures/fig5.png Graphic file (type png)
+<use Figures/fig5.png>
+Package pdftex.def Info: Figures/fig5.png  used on input line 317.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+<Figures/fig6.png, id=71, 462.528pt x 346.896pt>
+File: Figures/fig6.png Graphic file (type png)
+<use Figures/fig6.png>
+Package pdftex.def Info: Figures/fig6.png  used on input line 323.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+ [5 <./Figures/fig4.png> <./Figures/fig5.png>]
+<Figures/fig7.png, id=78, 462.528pt x 346.896pt>
+File: Figures/fig7.png Graphic file (type png)
+<use Figures/fig7.png>
+Package pdftex.def Info: Figures/fig7.png  used on input line 329.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+<Figures/fig8.png, id=79, 462.528pt x 346.896pt>
+File: Figures/fig8.png Graphic file (type png)
+<use Figures/fig8.png>
+Package pdftex.def Info: Figures/fig8.png  used on input line 335.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+ [6 <./Figures/fig6.png> <./Figures/fig7.png>]
+<Figures/fig9.png, id=86, 462.528pt x 346.896pt>
+File: Figures/fig9.png Graphic file (type png)
+<use Figures/fig9.png>
+Package pdftex.def Info: Figures/fig9.png  used on input line 341.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+<Figures/fig10.png, id=87, 462.528pt x 346.896pt>
+File: Figures/fig10.png Graphic file (type png)
+<use Figures/fig10.png>
+Package pdftex.def Info: Figures/fig10.png  used on input line 347.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+ [7 <./Figures/fig8.png> <./Figures/fig9.png>]
+<Figures/fig11.png, id=95, 462.528pt x 346.896pt>
+File: Figures/fig11.png Graphic file (type png)
+<use Figures/fig11.png>
+Package pdftex.def Info: Figures/fig11.png  used on input line 353.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+<Figures/fig12.png, id=96, 462.528pt x 346.896pt>
+File: Figures/fig12.png Graphic file (type png)
+<use Figures/fig12.png>
+Package pdftex.def Info: Figures/fig12.png  used on input line 359.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
+ [8 <./Figures/fig10.png> <./Figures/fig11.png>]
+<Figures/patologico.png, id=103, 462.528pt x 346.896pt>
+File: Figures/patologico.png Graphic file (type png)
+<use Figures/patologico.png>
+Package pdftex.def Info: Figures/patologico.png  used on input line 367.
+(pdftex.def)             Requested size: 398.33858pt x 298.76936pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 295.
- [3] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea2\build\Tarea2.aux
+(mdframed)              on input line 375.
+ [9 <./Figures/fig12.png> <./Figures/patologico.png>]
+Package mdframed Info: Not enough space on this page on input line 377.
+ [10] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea2\build\Tarea2.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -869,17 +942,17 @@ Package rerunfilecheck Info: File `Tarea2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28595 strings out of 475503
- 549006 string characters out of 5761834
+ 28709 strings out of 475503
+ 551336 string characters out of 5761834
  2046248 words of memory out of 5000000
- 49312 multiletter control sequences out of 15000+600000
+ 49419 multiletter control sequences out of 15000+600000
  581761 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,93p,639b,1301s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,93p,696b,1301s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ce_ra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea2\build\Tarea2.pdf" (3 pages, 143496 bytes).
+Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea2\build\Tarea2.pdf" (10 pages, 483287 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

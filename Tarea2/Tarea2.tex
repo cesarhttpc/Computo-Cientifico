@@ -286,8 +286,87 @@ donde los $x_i$ están dados en (\ref{2.03}).
 \end{problem}
 
 \begin{solution}
-    
+    Se construyo una función que recrea el experimento mencionado en el enunciado superior. Es decir, tomamos una regresión polinomial de grado $p-1$. El regresor x es una particion del intervalo $[0,4\pi]$ y la variable respuesta es una tranformación del regresor más el error que distribuye normal estandar. Se generaron los $n$ puntos. Se uso regresión con factorización QR tal como se detallo en el ejercicio previo. Luego se graficaron los resultados de la regresión que se muestran a continuación.
 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig1.png}
+        \label{3.01}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig2.png}
+        \label{3.02}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig3.png}
+        \label{3.03}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig4.png}
+        \label{3.04}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig5.png}
+        \label{3.05}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig6.png}
+        \label{3.06}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig7.png}
+        \label{3.07}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig8.png}
+        \label{3.08}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig9.png}
+        \label{3.09}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig10.png}
+        \label{3.10}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig11.png}
+        \label{3.11}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/fig12.png}
+        \label{3.12}
+    \end{figure}
+
+Observemos que las gráficas son bastante intuitivas a excepción de la gráfica con $n = p = 100$ pues el ajuste debería pasar por cada valor en la muestra ya que la matriz de diseño esta completamente determinada. Sin embargo este es un problema de la graficación, pues el dominio se partio con un \textit{linspace} con solo 100 subdivisiones. Se puede ver en la siguiente figura que si aumentamos dicho número para mayor presición vemos que el ajuste pasa por los datos, aunque por defecto del ajuste lineal los extremos tienden a crecer desproporcionadamente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 14cm]{Figures/patologico.png}
+    \label{3.13}
+\end{figure}
 
 \end{solution}
 

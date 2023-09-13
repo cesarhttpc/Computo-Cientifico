@@ -400,3 +400,14 @@ def GramSchmidtModified(A):
 
     return Q, R
 
+def vandermonde(x,p):
+    import numpy as np
+
+    n = len(x)
+    X = np.ones((n,p))
+
+    for i in range(p):
+        X[:,i] = x**i
+
+    return X
+
