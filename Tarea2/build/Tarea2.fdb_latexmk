@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1694596663 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea2/Tarea2.tex" "build/Tarea2.pdf" "Tarea2" 1694596666 0
+["pdflatex"] 1694599071 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea2/Tarea2.tex" "build/Tarea2.pdf" "Tarea2" 1694599074 0
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693352630 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt0900.pk" 1693352510 17512 6cd01f20f980e28056100ce70ea12289 ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1693352273 24120579 85898b25958cf632ec7946174c56943b ""
@@ -232,11 +232,14 @@
   "Figures/fig7.png" 1694595165 36692 791436cbec6bbe394e8415b48806b3f8 ""
   "Figures/fig8.png" 1694595174 42369 9ec132bf4bf4f63a4d92a6fd808a0cef ""
   "Figures/fig9.png" 1694595189 38650 062591cefa468a58192b6fbdd35015d2 ""
+  "Figures/memoria4.png" 1694598001 29209 894c869fb0b5398bdc6874a8ab375aef ""
+  "Figures/memoria5.png" 1694598545 33217 d11c6e93881415ec11368a9406f179fa ""
+  "Figures/memory2.png" 1694597589 32501 ec018d7de7d550b643646a608eec22cc ""
   "Figures/patologico.png" 1694596419 18360 35831bda899d7982ec75bff5a29e2ca7 ""
-  "Tarea2.tex" 1694596663 11712 7f6e5dc38f4b857e0e7682fb7b643547 ""
-  "build/Tarea2.aux" 1694596666 1333 0e0312143a5ed4dac0b29825ca63d964 "pdflatex"
-  "build/Tarea2.out" 1694596665 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea2/Tarea2.tex" 1694596663 11712 7f6e5dc38f4b857e0e7682fb7b643547 ""
+  "Tarea2.tex" 1694599070 12693 ec44c24298061f3b0f731f47b98fb131 ""
+  "build/Tarea2.aux" 1694599073 1438 61fd1f36e37ce4dea678ea72dc869c05 "pdflatex"
+  "build/Tarea2.out" 1694599072 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea2/Tarea2.tex" 1694599070 12693 ec44c24298061f3b0f731f47b98fb131 ""
   (generated)
   "build/Tarea2.aux"
   "build/Tarea2.log"

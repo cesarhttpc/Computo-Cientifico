@@ -370,13 +370,37 @@ Observemos que las gráficas son bastante intuitivas a excepción de la gráfica
 
 \end{solution}
 
-
+% //////////////// Ejercicio 4 //////////
 \begin{problem}{4}
     Hacer $p = 0.1n$, o sea, diez veces más observaciones que coeficientes en la regresión, ?` Cuál es la $n$ máxima que puede generar su computadora?
 \end{problem}
 
 \begin{solution}
     
+    
+    Vemos que el valor de $n$ máximo es 50000. En un estado natural el comportamiento de la memoria esta cerca del 40 por cieto de uso, como lo vemos en la siguiente figura
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/memory2.png}
+        \label{4.1}
+    \end{figure}
+    
+    En el caso de $n$ cercano a 50000 la memoria se mantine estable pero el proceso no termina. Vemos los requerimientos en la siguiente figura.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/memoria4.png}
+        \label{4.2}
+    \end{figure}
+    
+    Sin embargo en casos mayores se observa una creciente consumo de memoria y capacidad de CPU por lo que el proceso termina por fracturarse.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 14cm]{Figures/memoria5.png}
+        \label{4.3}
+    \end{figure}
+    
 \end{solution}
-
-\end{document}
+    
+    \end{document}

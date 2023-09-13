@@ -94,11 +94,11 @@ def RegresionPolinomial(n,p):
     # Regresión 
     beta = regresion(X,Y)
 
-    #Graficar
+    # Graficar
     a,b = 0, 4*np.pi
     dominio = np.linspace(a,b,100)   #Dominio a graficar
 
-    #Potente función lambda impresionante
+    # Observando detalladamente en esta única línea se genera el polinomio
     y = lambda z: sum([coeff*z**j for (coeff, j) in zip(beta,range(p))])
 
     plt.scatter(x, Y, c ="blue")
@@ -172,9 +172,11 @@ RegresionPolinomial(n,p)
 
 
 
+# Ejercicio 4  No correr o explota la máquina
 
-
-
+# n = 100000
+# p = int(0.1*n)
+# RegresionPolinomial(n,p)
 
 
 
