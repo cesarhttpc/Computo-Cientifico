@@ -1,0 +1,250 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment}
+\usepackage{lipsum} 
+\usepackage{fullpage} %cambiar margen
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+
+\usepackage{amssymb,amsthm} 
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+%\usepackage[numbered]{mcode}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows,calc,positioning}
+\usepackage{mathpazo} %tipo de letra 
+\usepackage[utf8]{inputenc} %codificación
+\usepackage[T1]{fontenc} %digitación de tildes y ñ
+\usepackage[spanish]{babel} %paquete de soporte español
+
+\tikzset{
+	block/.style = {draw, rectangle,
+		minimum height=1cm,
+		minimum width=1.5cm},
+	input/.style = {coordinate,node distance=1cm},
+	output/.style = {coordinate,node distance=4cm},
+	arrow/.style={draw, -latex,node distance=2cm},
+	pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+	sum/.style = {draw, circle, node distance=1cm},
+}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+
+\usepackage{listings}
+\lstset{literate=
+  {á}{{\'a}}1
+  {é}{{\'e}}1
+  {í}{{\'i}}1
+  {ó}{{\'o}}1
+  {ú}{{\'u}}1
+  {Á}{{\'A}}1
+  {É}{{\'E}}1
+  {Í}{{\'I}}1
+  {Ó}{{\'O}}1
+  {Ú}{{\'U}}1
+  {ñ}{{\~n}}1
+  {ü}{{\"u}}1
+  {Ü}{{\"U}}1
+}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Python,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\newenvironment{problem}[2][Ejercicio]
+{ \begin{mdframed}[backgroundcolor= red!50] \textbf{#1 #2} \\}
+	{  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}
+{\textcolor{blue}{\textbf{\textit{Solución:\\\noindent}}}}
+
+
+\renewcommand{\qed}{\quad\qedsymbol}
+
+% \\	
+\begin{document}
+	\noindent
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{minipage}[b][1.2cm][t]{0.8\textwidth}
+		\large\textbf{César Isaí García Cornejo} \hfill \textbf{Tarea 3}  \\
+		cesar.cornejo@cimat.mx \hfill \\
+		\normalsize Computo Científico \hfill Semestre 3\\
+	\end{minipage}
+	
+	\hspace{14.4cm}
+	\begin{minipage}[b][0.03cm][t]{0.12\linewidth}
+		
+		\vspace{-2.2cm}
+		%%%La Ruta dependera de donde este alojado el main y la imagen
+		\includegraphics[scale=0.3]{Figures/EscudoCimat.png}
+	\end{minipage}
+	
+	\noindent\rule{7in}{2.8pt}
+	
+	%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Problem 1
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setlength{\parskip}{\medskipamount}
+	\setlength{\parindent}{0pt}
+%/////////// Ejercicio 1 /////////////////
+
+\begin{problem}{1}
+    Sea $Q$ una matriz unitaria aleatoria de 20$\times$ 20 (eg. con A una matriz de tamaño 20 $\times20$ aleatoria calculen su descomposición QR). Sean $\lambda_1 > \lambda_2 > \cdots > \lambda_{20} = 1 >0$ y 
+    \begin{align*}
+      B = Q^*diag(\lambda_1,\lambda_2, \cdots , \lambda_{20} )Q, \:\:\:\:\: B_{\varepsilon} = Q^*diag(\lambda_1 + \varepsilon_1,\lambda_2+\varepsilon_2, \cdots , \lambda_{20}+\varepsilon_{20} )Q
+    \end{align*}
+    con $\varepsilon_i \sim N(0,\sigma)$, con $\sigma = $0.02$\lambda_{20}$ = 0.01.  
+
+    \begin{enumerate}
+        \item Comparar la descomposición de Cholesky de $B$ y de $B_\varepsilon$ usando el algoritmo de la tarea 1. Considerar los casos cuando $B$ tiene un buen número de condición y un mal número de condición.
+        \item Con el caso mal condiciona, comparar el resultado de su algoritmo con el del algoritmo Cholesky de scipy.
+        \item Medir el tiempo de ejecución de su algoritmo de Cholesky con el de scipy.
+    \end{enumerate}
+
+
+\end{problem}
+
+
+\begin{solution}
+
+\begin{enumerate}
+  \item Siguiendo las indicaciones, generamos una matriz aleatoria $A$ donde cada entrada en una realización de una distribución normal estandar. Entonces, por la descomposición QR obtenemos una matriz unitaria. Veamos que para tener una matriz bien condicionada o mal condicionada se requiere que su número de condición sea relativamente grande. El número de condición depende de los valores singulares extremos, es decir, el valor singular mayor y menor. En matrices cuadradas los valores singulares se obtienen con los valores propios. Así, la matriz $B$ y $B_\varepsilon$ se construyen para poder manipular el número de condición de las matrices. 
+
+  Se propone tomar $\lambda_1 > \lambda _2 > \cdots > \lambda_{20}= 1$ de la forma
+  \begin{align*}
+    \lambda_i = \frac{\alpha^{20}}{\alpha ^i }, \:\:\:\:\:\:\:\:\:\:\: i = 1,\cdots 20.
+  \end{align*}
+  Esta caracterización nos permite obtener valores similares de $\lambda_i$ para $\alpha$ pequeños cercanos a uno, en contraste con $\alpha$ mayores, que genera valores muy dispares para $\lambda_i$. 
+
+  De esta forma, para el caso $\alpha =$ 1.1  tenemos que el valor mayor de lamda $\lambda_1 =$ 6.11  mientras que por construcción  $\lambda_{20} = 1$. Es decir el numero de condición es próximo a 6.11 que es una matriz bien condicionada. Para $\alpha = 5$ tenemos que $\lambda_1 \approx 1.9 \times 10^{13} $ lo que forma un número de condición malo. 
+
+
+  Pensemos por ahora en el caso bien condicionado. Tras la construcción de las matrices $B$ y $ B_\varepsilon$  se calcula la matriz $R$ de la descomposición Cholesky implementada en la primer tarea. 
+  
+  \begin{align*}
+    B = R^* R  \:\:\:\:\:\:\:\:\: B_\varepsilon = R_\varepsilon^* R_\varepsilon
+  \end{align*}
+  
+  Esto nos genera dos matrices, que para fines comparativos consideramos la diferencia entre ellas. 
+  
+  \begin{align*}
+    \Delta R = R - R_\varepsilon
+  \end{align*}
+
+  Dicha diferencia se imprimio en pantalla en el código adjunto. Notamos errores relativamente pequeños, y que dicho error ronda el orden de milesimas (-3).
+  
+  Se hace lo mismo para la matriz B mal condicionada ($\alpha = 5$), nuevamente se imprime en pantalla la diferencia entre las matrices $R$ y notamos que tiene un error menor pero más variable. Estos errores rondan del orden de -9 a -6.
+
+  Lo anterior no es concluyente, va contra la intuición. Por ello, consideramos en obtener la norma de matrices para saber con certeza cuáles pares de matrices \textit{distan } más. Usando la norma  $L^2 $ implementada con scipy, que consta del valor singular más grande, tenemos que la norma en el caso mal condicionado es mayor al caso bien condicionado, pues 
+  \begin{align*}
+    \left \| \Delta R_{BC} \right \|_2 &= 0.0461\\
+    \left \| \Delta R_{MC} \right \|_2 &= 0.0532
+  \end{align*}
+
+  \item Para el próposito indicado, es necesario mandar a llamar la paquetería con el comando
+  \begin{lstlisting}
+from scipy.linalg import cholesky as scipycholesky
+
+R_sci = scipycholesky(B)
+R_sci_eps = scipycholesky(B_eps)
+
+  \end{lstlisting}
+  donde el renombramiento en la función se aplicó para desambiguar de la función local del mismo nombre, y $B$ es la matriz mal condicionada construida con $\alpha = 5$. Al imprimir en pantalla y análizar notamos que dicha matriz $R$ es sustancialmente diferente al obtenido por nosotros. Luego, scipy manejo mejor el malcondicionamiento, pues tambien lo notamos al obtener su norma $L^2$
+  \begin{align*}
+    \left \| \Delta R_{ScipyMC} \right \|_2 &= 0.052
+  \end{align*}
+  que es menor en distancia a la obtenida por nuestro algoritmo.
+
+
+  \item 
+  El tiempo de ejecución se obtuvo de manera usual con la función time de python. Al medir el tiempor de nuestro algoritmo, este tiene una duración de \textbf{0.00976} nanosegundo contra el tiempo que tarda la función de scipy que demoró \textbf{0.00950}
+
+
+  Estos valores del tiempo difieren a cuando comentamos las impresiones de pantalla de las matrices. En este caso tenemos que el tiempo que tarda nuestro algoritmo es de \textbf{0.00199} nanosegundo vs scipy que tarda \textbf{0.00086} nanosegundo. 
+  
+  En ambos situaciones el algoritmo de scipy tarda menos, lo que es razonable considerando que sabemos que dicha librearia esta construida en C.
+
+
+\end{enumerate}
+
+\end{solution}
+
+
+
+\begin{problem}{2}
+    Resolver el problema de mínimos cuadrados, 
+    \begin{align*}
+        y = X\beta + \varepsilon, \:\:\:\: \varepsilon_i \sim N(0,\sigma)
+    \end{align*}
+    usando su implementación de la descomposición QR; $\beta$ es de tamaño $n\times 1$ y $X$ de tamaño $n\times d$.
+
+    Sean $d =5 $, $n =20$, $\beta= (5,4,3,2,1)$ y $\sigma = 0.13$.
+    \begin{enumerate}
+        \item Hacer $X$ con entradas aleatorias $U(0,1)$ y simular $y$. Encontrar $\hat{\beta}_p$ haciendo $X + \Delta X $, donde las entrads de $\Delta X$ son $N(0,\sigma = 0.01)$ Comparar a su vez con $\hat{\beta}_c = ((X + \Delta X)^*(X + \Delta X))^{-1} (X + \Delta X)^*y $ usando el algoritmo genérico para inveritr matrices scipy.linalg.inv
+        \item Lo mismo que el anterior pero con $X$ mal condicionada (ie. con casi colinealidad).
+    \end{enumerate}
+\end{problem}
+
+
+\begin{solution}
+
+\begin{enumerate}
+  \item Procedemos con crear el vector $y$ simplemente usando la relación dada. Con el algoritmo de regresión lineal por medio de QR podemos hacer regresión y calcular el estimador de mínimos cuadrados.
+  
+  Vemos que el estimador de mínimos cuadrados es, para una realización de $\varepsilon_i$
+  \begin{align*}
+    \hat{\beta} = (,,,,)
+  \end{align*}
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+\end{solution}
+
+    \end{document}
