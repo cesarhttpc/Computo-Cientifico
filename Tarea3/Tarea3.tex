@@ -227,10 +227,45 @@ R_sci_eps = scipycholesky(B_eps)
 \begin{enumerate}
   \item Procedemos con crear el vector $y$ simplemente usando la relación dada. Con el algoritmo de regresión lineal por medio de QR podemos hacer regresión y calcular el estimador de mínimos cuadrados.
   
-  Vemos que el estimador de mínimos cuadrados es, para una realización de $\varepsilon_i$
+  Vemos que el estimador de mínimos cuadrados es, para una realización de $\varepsilon$
   \begin{align*}
-    \hat{\beta} = (,,,,)
+    \hat{\beta} = (4.95718095; 4.03395321; 3.02021941; 2.01559771; 1.04167694)
   \end{align*}
+  Con el error $\Delta X$, tenemos una nueva matriz de diseño $ X + \Delta X$ cuyo estimador de mínimos cuadrados es 
+  \begin{align*}
+    \hat{\beta}_p = (4.92740612; 4.0334383;  3.00621361; 2.03061811; 1.08462213)
+  \end{align*}
+  que se obtuvo por regresión con QR.
+
+  Finalmente, para la misma matriz de diseño $X + \Delta X$, obtenemos el estimador de mínimos cuadrados análitico que es
+  \begin{align*}
+    \hat{\beta}_c = (4.92740612; 4.0334383;  3.00621361; 2.03061811; 1.08462213)
+  \end{align*}
+
+  La primera observación a hacer es que $\hat{\beta}_p = \hat{\beta}_c$ y esto tiene sentido pues resolver el sistema de ecuaciones lineales por QR 
+  \begin{align*}
+    (X + \Delta X)^*(X + \Delta X) \hat{\beta}_p = (X + \Delta X)^*y
+  \end{align*}
+  es equivalente al expresado en el enunciado para $\hat{\beta}_c$ siempre que la matriz $X$ sea de rango completo para evitar problemas con la inversa. 
+  
+  La siguiente observación es que vemos que el valor de los estimadores $\hat{\beta}$ y $\hat{\beta}_p$ difieren muy poco.
+
+  \item Para el caso con casí colinealidad o mal condicionado, construímos la matriz de diseño de forma que una de sus columnas es combinación lineal de las otras.
+  
+  Construimos la matriz de diseño casi colineal tomando una matriz aleatoria de $n\times d$ y luego sustituimos la segunda columna por la primera más un error que distribuye normal con media cero y varianza pequeña. En este caso, consideramos un error con varianza $\sigma =$ 0.01 para tener casi la misma fila. Luego, hacemos lo mismo que el inciso previo.
+
+  El estimador de mínimos cuadrados de la matriz de diseño es
+  \begin{align*}
+    \hat{\beta}   = (2.01977367; -8.83891167; -2.37905967;  1.06147236; -1.09874232)
+  \end{align*}
+  que pronto vemos difiere bastante de $\beta$. Luego, como ya sabemos que $\hat{\beta}_p = \hat{\beta}_c $ reportamos únicamente uno de ellos. De igual forma, se comprobó numericamente que dicha iguadad se satisface en el código correspondiente. Así
+  \begin{align*}
+    \hat{\beta_c} = (1.99456172; -8.99101306; -2.4984814;   1.04200205; -1.1090989)
+  \end{align*}
+  donde volvemos a notar que la solución ha explotado lo que representa el hecho de estar mal condicionada.
+
+
+
 
 
 

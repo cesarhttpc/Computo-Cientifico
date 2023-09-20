@@ -18,7 +18,7 @@ def regresion(X,Y):
     return beta
 
 # Parámetros
-n = 6
+n = 20
 d = 5
 
 X = norm.rvs(0,1,(n,d))
@@ -30,16 +30,55 @@ y = X @ beta + epsilon
 # Estimador por regresión lineal
 beta_hat = regresion(X, y)
 
+print("Caso bien condicionado")
 print("Estimador de mínimos cuadrados beta: ", beta_hat)
-print("\n")
 
-DeltaX = norm.rvs(0,0.01, (n,d))
+# Estimador de mínimos cuadrados númerico bajo un error
+DeltaX = norm.rvs(0, 0.01, (n,d))
 
 beta_p = regresion(X+DeltaX, y)
-print(beta_p)
+print("Estimador de mínimos cuadrados beta_p: ", beta_p)
 
-
+# Estimador de mínimos cuadrados análitico bajo un error
 beta_c = inv((X + DeltaX).T @ (X + DeltaX)) @ ( (X + DeltaX).T @y)
+print("Estimador de mínimos cuadrados beta_c: ", beta_c)
+
+# Para un X mal condicionado, casí colineal
+print("\nCaso mal condicionado")
+Xcol = norm.rvs(0,1,(n,d))
+
+sigma_col = .01
+ruido = norm.rvs(0,sigma_col,n)
+
+Xcol[:,1] = Xcol[:,0] + ruido
+
+# print("Matriz X casi colineal: \n", Xcol)
+
+y = Xcol @ beta + epsilon
+
+# Estimador por regresión lineal
+beta_hat = regresion(X, y)
+
+print("Estimador de mínimos cuadrados beta: ", beta_hat)
+
+# Estimador de mínimos cuadrados númerico bajo un error
+DeltaX = norm.rvs(0, 0.01, (n,d))
+
+beta_p = regresion(X+DeltaX, y)
+print("Estimador de mínimos cuadrados beta_p: ", beta_p)
+
+# Estimador de mínimos cuadrados análitico bajo un error
+beta_c = inv((X + DeltaX).T @ (X + DeltaX)) @ ( (X + DeltaX).T @y)
+print("Estimador de mínimos cuadrados beta_c: ", beta_c)
+
+
+
+
+
+
+
+
+
 
 
 
