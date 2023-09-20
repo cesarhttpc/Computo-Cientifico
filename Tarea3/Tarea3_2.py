@@ -56,8 +56,9 @@ Xcol[:,1] = Xcol[:,0] + ruido
 
 y = Xcol @ beta + epsilon
 
+X = Xcol
 # Estimador por regresión lineal
-beta_hat = regresion(X, y)
+beta_hat = regresion(Xcol, y)
 
 print("Estimador de mínimos cuadrados beta: ", beta_hat)
 
