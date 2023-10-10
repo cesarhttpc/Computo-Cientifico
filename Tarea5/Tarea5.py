@@ -79,6 +79,25 @@ def quantil_g(x):
 
     return x_techo[indice]
 
+def valor_x(z):
+    '''
+    Busca el indice en el linspace para que x_techo(indice) es el número mayor z más pequeño, que es la entrada de la función.
+    
+    '''
+    x_techo = np.linspace(0.05,9,400) 
+
+    indice = 0
+    indexNotFound = True
+
+    while indexNotFound:
+        if (x_techo[indice] < z  and indice < len(x_techo) -1):
+            indice = indice + 1
+
+        else: 
+            indexNotFound = False
+
+    return indice
+
 def constructor(X):
     '''
     Construye la función de distribución acumulada para la función de densidad techo.
@@ -119,9 +138,13 @@ def constructor(X):
     def g(x):
         return ftecho(x)/omega
 
+    # Vectoriazación de g
+    x_techo = np.linspace(0.05,9,400) # Dominio para la función techo
+    densidad_g = np.zeros(len(x_techo))
+    for j in range(len(x_techo)):
+        densidad_g[j] = g(x_techo[j])
 
     # Vectorización (ya que la función no puede recibir vectores)
-    x_techo = np.linspace(0.05,9,400) # Dominio para la función techo
     envolvente = np.zeros(len(x_techo))
     for i in range(len(x_techo)):
         envolvente[i] = techo(x_techo[i])
@@ -137,24 +160,24 @@ def constructor(X):
     ### Gráficas de interés
     # Descomentar para ver. Con cuidado de no iterar graficas al actualizar la rejilla, por eso mejor dejar comentadas
     
-    # # Grafica densidad
-    # plt.plot(x,f(x),label = 'Gamma(2,1)')
-    # plt.title('Densidad de la distribución Gamma(2,1)')
-    # plt.xlabel('x')
-    # plt.legend()
-    # plt.show()
+    # Grafica densidad
+    plt.plot(x,f(x),label = 'Gamma(2,1)')
+    plt.title('Densidad de la distribución Gamma(2,1)')
+    plt.xlabel('x')
+    plt.legend()
+    plt.show()
 
-    # # Grafica log-densidad
-    # plt.plot(x,np.log(f(x)), label = 'log f(x)')
-    # plt.plot(X,Y,"o")
-    # plt.title('Log densidad y su envolvente')
-    # plt.ylabel('log f(x)')
-    # plt.xlabel('x')
+    # Grafica log-densidad
+    plt.plot(x,np.log(f(x)), label = 'log f(x)')
+    plt.plot(X,Y,"o")
+    plt.title('Log densidad y su envolvente')
+    plt.ylabel('log f(x)')
+    plt.xlabel('x')
 
-    # # Grafica de la envolvente
-    # plt.plot(x_techo,envolvente, label = 'h(x)')
-    # plt.legend()
-    # plt.show()
+    # Grafica de la envolvente
+    plt.plot(x_techo,envolvente, label = 'h(x)')
+    plt.legend()
+    plt.show()
 
     # # Graficar la función de densidad y su acotamiento
     # plt.plot(x,f(x), label = 'Gamma(2,1)')
@@ -169,56 +192,48 @@ def constructor(X):
     # plt.plot(x_techo,acumulado)  
     # plt.show()
 
-    return acumulado
+    return acumulado, densidad_g
 
 
-# INICIALIZACION
+# INICIALIZACION  /////////////
 x = np.linspace(0.01,9,100)
 f = lambda x: x*np.exp(-x)
 
-# Rejilla inicial
-X = [0.4,1,3,8,6,0.25,2.2,1.2] 
+# Rejilla 
+X = [0.4,1,3,8,6,0.25,2.2,1.2] #X = [0.4,1,3,8] malla inicial
 X.sort()
 
+acumulado, densidad_g = constructor(X)
 
-acumulado = constructor(X)
-
-tamaño = 100000
+tamaño = 100000    #Modifica tamaño de muestra objetivo
 Muestra = np.zeros(tamaño)
+
+
 for k in range(tamaño):
 
     # Transformada inversa
     u = uniform.rvs(0,1)
     z = quantil_g(u)
 
-    # Actualizar la rejilla con más puntos
+    # Actualizar la rejilla con más puntos según accept-reject
+    # Las actualizaciones a la rejilla se hacen manualmente (rejilla inicial), ya que al actualizar un número arbitrario de veces el proceso tarda mucho
     actualizador = 1
     if actualizador <=0:   #Cantidad de actualizaciones
-        for l in range(len(acumulado)):
-            
-            if u > g(z)/f(z):    # Con error por corregir en g
-                X.append(z)
-                actualizador = actualizador + 1
-                acumulado = constructor(X)
+        actualizador += 1
+        if u*f(z) > densidad_g[valor_x(z)]:  #Condición de rechazo
+            X.append(z)
+            actualizador = actualizador + 1
+            acumulado = constructor(X)[0]
     else:
         
         Muestra[k] = z
 
 
 # print(Muestra)
-plt.hist(Muestra,density=True,bins= 100)
+plt.hist(Muestra,density=True,bins= 100) #int(np.sqrt(len(Muestra))))   
 plt.title('Simulación ARS para gamma(2,1)')
 plt.plot(x,f(x),label = 'Gamma(2,1)')
 plt.xlabel('x')
 plt.legend()
 plt.show()
-
-
-
-
-
-
-
-
-
 

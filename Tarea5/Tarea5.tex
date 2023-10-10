@@ -277,7 +277,30 @@
         \label{Fig. 5.03}
     \end{figure} 
 
+    Posteriormente, es necesario simular de la función techo $g(x) = \exp(h(x))$. Para ello usamos el resultado del inciso 1. Es decir, generamos una función acumulada de probabilidad para $g(x)$ con esto tenemos que crear ahora la función para la inversa generalizada dada un $u\in [0,1]$. Simulando la variable aleatoria uniforme $u$ y evaluando en la inversa generalizada $ z = g^{-}(u)$ tenemos una simulación de la densidad techo.
 
+    Ahora usando el método de accept-reject. Tomamos la simulación $z$ y una nueva simulación de la uniforme $u$ y aceptamos como muestras de la función de densidad $f$ solo para aquellas muestras $z$ que satisgan que $u *f(z) < g(z)$. En caso de no aceptar se rechaza la muestra y se actualiza con la función constructor() para una nueva rejilla donde se agrega el simulado en la rejilla. Es decir, se vuelve a hacer el mismo procedimiento para simular de la función envolvente $g$ actualizada.  
+
+
+    La actualización de la rejilla tras rechazar ciertas muestras nos actualiza la envolvente. En este caso, se decidio tomar solo una cantidad fija de actualizaciones ya que es computacionalmente pesado actulizar arbitrariamente. Para cuatro actualizaciones tenemos que la envolvente en la log-densidad es
+    \begin{figure}[H] 
+        \centering 
+        \includegraphics[width = 11 cm ]{Figures/EnvolModificada.png} 
+        \caption{Envolvente modificada con más puntos en la rejilla}
+        \label{Fig. 5.04 }
+    \end{figure} 
+
+    Ya con la envolvente modificada, se toman ahora las simulaciones de 100000 elementos y se grafican en un histograma junto a la densidad gamma(2,1).
+
+    \begin{figure}[H] 
+        \centering 
+        \includegraphics[width = 11 cm ]{Figures/Resultado.png} 
+        \caption{Histograma para las muestras simuladas por el método ARS de la distribución gamma(2,1)}
+        \label{Fig. 5.05}
+    \end{figure} 
+
+    Notemos que tenemos un buen ajuste asíntotico para la densidad objetivo. Veamos que por construcción, en los extremos tenemos masa acumulada debido a que en la inversa generalizada, al tener mallas muy finas (linspace) para valores cercanos a 1 (x grandes), no se podia encontrar un valor en la malla que no fuera menor que x. Este problema se debe a que la inversa generalizada cercana a uno puede crecer significativamente, por lo que aquellos valores $X$ de la simulación que sobrepasaran el límite establecido se agrupaban en el últimi valor del linspace.
+    
     
 
 
