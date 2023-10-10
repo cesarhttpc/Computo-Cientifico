@@ -139,7 +139,7 @@ def ftecho(x):
 
 
 # Vectorización (ya que la función no puede recibir vectores)
-x_techo = np.linspace(0.1,9,400) # Dominio para la función techo
+x_techo = np.linspace(0.05,9,1000) # Dominio para la función techo
 envolvente = np.zeros(len(x_techo))
 for i in range(len(x_techo)):
     envolvente[i] = techo(x_techo[i])
@@ -175,7 +175,7 @@ plt.legend()
 plt.show()
 
 # %%
-
+#Simular de la densidad techo 
 omega = integrate.quad(ftecho,0,np.inf)[0]  # Constante de normalidad
 
 def g(x):
@@ -190,17 +190,27 @@ for j in range(len(x_techo)):
 
 
 #Plot de cdf_g la función acumulada
-plt.plot(x_techo,acumulado)  
-plt.show()
+# plt.plot(x_techo,acumulado)  
+# plt.show()
 
 # %%
 def quantil_g(x):
-    t = 0 
-    while cdf_g(t) < x:    
-        t = t + 0.1
-    return t
 
-m= 10
+    indice = 0
+    indexNotFound = True
+    while indexNotFound:
+        if (acumulado[indice] < x  and indice < len(x_techo) -1):
+            indice = indice + 1
+
+        else: 
+            indexNotFound = False
+
+    return x_techo[indice]
+
+# %%
+
+
+m= 70000
 U = uniform.rvs(0,1,m)
 Y_muestra = np.zeros(m)
 for i in range(m):
@@ -208,17 +218,11 @@ for i in range(m):
 
 
 
-# # Gráfica de la simulación de la nueva variable
-# plt.hist(Y_muestra,density=True)
-# plt.plot(x,f(x))
+# Gráfica de la simulación de la nueva variable
+plt.hist(Y_muestra,density=True,bins= 100)
+plt.plot(x,f(x))
+plt.plot(x_techo, np.exp(envolvente)/omega, label = 'exp h(x)')
 
-
-
-
-
-# print("quantil",quantil_g(0.25))
-# print(cdf_g(quantil_g(0.456)))
-    
 
 
 
