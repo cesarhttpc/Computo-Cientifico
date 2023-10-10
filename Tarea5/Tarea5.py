@@ -6,6 +6,7 @@ from scipy.stats import uniform
 import scipy.integrate as integrate
 
 # %%
+# Ejercicio 2
 def uniforme(n,seed = None):
 
     modulo = 2**31-1
@@ -34,7 +35,6 @@ def uniforme(n,seed = None):
         
     return X_t / (modulo -1)
     
-# Ejercicio 2
 n = 100
 U = uniforme(n)
 plt.figure(figsize=(7,5))
@@ -51,57 +51,7 @@ plt.title('Histograma de los valores simulados por scipy')
 plt.show()
 
 # %%
-# Accept-Reject Method
-from scipy.stats import cauchy
-'''
-Simulamos la distribución normal a traves de simulaciones cauchy.
-'''
-
-# //////////////////
-'''
-M = 2/np.sqrt(np.exp(1))   #Cota M
-
-f = lambda x: np.exp(-x**2/2)
-g = lambda x: M/(1+ x**2)
-
-x = np.linspace(-5,5,100)
-
-plt.plot(x,f(x))
-plt.plot(x,g(x))
-plt.show()
-
-
-# Método aceptar y rechazar
-size = 10
-Y = np.zeros(size+1)
-
-count = 0
-while count <= size:
-
-    X = cauchy.rvs(0,1)
-    u = uniform.rvs(0,1)
-
-    if u <= f(X)/g(X):
-        Y[count] = X
-        count = count + 1
-
-# plt.hist(Y,density= True)
-'''
-
-# %%
 # Ejercicio 5     Adaptive Rejection Sampling
-x = np.linspace(0.01,9,100)
-f = lambda x: x*np.exp(-x)
-
-# Rejilla inicial
-X = [0.4,1,3,8]
-X.sort()
-
-Y = []
-n = len(X)
-for i in range(n):
-    Y.append(np.log(f(X[i])))
-
 
 def recta(x,x_i,x_j):
     '''
@@ -114,87 +64,9 @@ def recta(x,x_i,x_j):
     y = y_i + (y_i-y_j)/(x_i - x_j)*(x- x_i)
     return y
 
-def techo(x):
-    '''
-    Esta función recive un x, devuelve el valor de la envolvente del método ARS en dicho valor de x.
-    '''
-    if x <= 0:
-        g = 0
-    elif (x >= 0 and x < X[0]):
-        g = recta(x,X[0],X[1])
-    elif (x >= X[0] and x < X[1]):
-        g = recta(x,X[1],X[2])
-    elif (x >= X[n-2] and x < X[n-1]):
-        g = recta(x,X[n-3],X[n-2])
-    elif (x >= X[n-1]):
-        g = recta(x,X[n-2],X[n-1])
-    else:
-        for i in range(1,n-2):
-            if ( x >= X[i] and x < X[i+1]):
-                g = min(recta(x,X[i-1],X[i]),recta(x,X[i+1],X[i+2]))
-    return g
-
-def ftecho(x):
-    return np.exp(techo(x))
-
-
-# Vectorización (ya que la función no puede recibir vectores)
-x_techo = np.linspace(0.05,9,1000) # Dominio para la función techo
-envolvente = np.zeros(len(x_techo))
-for i in range(len(x_techo)):
-    envolvente[i] = techo(x_techo[i])
-
-
-### Gráficas de interes
-# Grafica densidad
-plt.plot(x,f(x),label = 'Gamma(2,1)')
-plt.title('Densidad de la distribución Gamma(2,1)')
-plt.xlabel('x')
-plt.legend()
-plt.show()
-
-# Grafica log-densidad
-plt.plot(x,np.log(f(x)), label = 'log f(x)')
-plt.plot(X,Y,"o")
-plt.title('Log densidad y su envolvente')
-plt.ylabel('log f(x)')
-plt.xlabel('x')
-
-# Grafica de la envolvente
-plt.plot(x_techo,envolvente, label = 'h(x)')
-plt.legend()
-plt.show()
-
-# Graficar la función de densidad y su acotamiento
-plt.plot(x,f(x), label = 'Gamma(2,1)')
-plt.plot(np.array(X),f(np.array(X)),'o')
-plt.plot(x_techo, np.exp(envolvente), label = 'exp h(x)')
-plt.title('Densidad y su envolvente')
-plt.xlabel('x')
-plt.legend()
-plt.show()
-
-# %%
-#Simular de la densidad techo 
-omega = integrate.quad(ftecho,0,np.inf)[0]  # Constante de normalidad
-
-def g(x):
-    return ftecho(x)/omega
-
-def cdf_g(x):
-    return integrate.quad(g,0,x)[0]
-
-acumulado = np.zeros(len(x_techo))
-for j in range(len(x_techo)):
-    acumulado[j] = cdf_g(x_techo[j])
-
-
-#Plot de cdf_g la función acumulada
-# plt.plot(x_techo,acumulado)  
-# plt.show()
-
-# %%
 def quantil_g(x):
+
+    x_techo = np.linspace(0.05,9,400) 
 
     indice = 0
     indexNotFound = True
@@ -207,25 +79,139 @@ def quantil_g(x):
 
     return x_techo[indice]
 
-# %%
+def constructor(X):
+    '''
+    Construye la función de distribución acumulada para la función de densidad techo.
+    '''
+
+    X.sort()
+    Y = []
+    n = len(X)
+    for i in range(n):
+        Y.append(np.log(f(X[i])))
+
+    def techo(x):
+        '''
+        Esta función recive un x, devuelve el valor de la envolvente del método ARS en dicho valor de x.
+        '''
+        if x <= 0:
+            g = 0
+        elif (x >= 0 and x < X[0]):
+            g = recta(x,X[0],X[1])
+        elif (x >= X[0] and x < X[1]):
+            g = recta(x,X[1],X[2])
+        elif (x >= X[n-2] and x < X[n-1]):
+            g = recta(x,X[n-3],X[n-2])
+        elif (x >= X[n-1]):
+            g = recta(x,X[n-2],X[n-1])
+        else:
+            for i in range(1,n-2):
+                if ( x >= X[i] and x < X[i+1]):
+                    g = min(recta(x,X[i-1],X[i]),recta(x,X[i+1],X[i+2]))
+        return g
+
+    def ftecho(x):
+        return np.exp(techo(x))
+
+    #Simular de la densidad techo 
+    omega = integrate.quad(ftecho,0,np.inf)[0]  # Constante de normalidad
+    
+    def g(x):
+        return ftecho(x)/omega
 
 
-m= 70000
-U = uniform.rvs(0,1,m)
-Y_muestra = np.zeros(m)
-for i in range(m):
-    Y_muestra[i] = quantil_g(U[i])
+    # Vectorización (ya que la función no puede recibir vectores)
+    x_techo = np.linspace(0.05,9,400) # Dominio para la función techo
+    envolvente = np.zeros(len(x_techo))
+    for i in range(len(x_techo)):
+        envolvente[i] = techo(x_techo[i])
+
+    # Función acumulada de probabilidad
+    def cdf_g(x):
+        return integrate.quad(g,0,x)[0]
+
+    acumulado = np.zeros(len(x_techo))
+    for j in range(len(x_techo)):
+        acumulado[j] = cdf_g(x_techo[j])
+
+    ### Gráficas de interés
+    # Descomentar para ver. Con cuidado de no iterar graficas al actualizar la rejilla, por eso mejor dejar comentadas
+    
+    # # Grafica densidad
+    # plt.plot(x,f(x),label = 'Gamma(2,1)')
+    # plt.title('Densidad de la distribución Gamma(2,1)')
+    # plt.xlabel('x')
+    # plt.legend()
+    # plt.show()
+
+    # # Grafica log-densidad
+    # plt.plot(x,np.log(f(x)), label = 'log f(x)')
+    # plt.plot(X,Y,"o")
+    # plt.title('Log densidad y su envolvente')
+    # plt.ylabel('log f(x)')
+    # plt.xlabel('x')
+
+    # # Grafica de la envolvente
+    # plt.plot(x_techo,envolvente, label = 'h(x)')
+    # plt.legend()
+    # plt.show()
+
+    # # Graficar la función de densidad y su acotamiento
+    # plt.plot(x,f(x), label = 'Gamma(2,1)')
+    # plt.plot(np.array(X),f(np.array(X)),'o')
+    # plt.plot(x_techo, np.exp(envolvente), label = 'exp h(x)')
+    # plt.title('Densidad y su envolvente')
+    # plt.xlabel('x')
+    # plt.legend()
+    # plt.show()
+
+    #Plot de cdf_g la función acumulada
+    # plt.plot(x_techo,acumulado)  
+    # plt.show()
+
+    return acumulado
 
 
+# INICIALIZACION
+x = np.linspace(0.01,9,100)
+f = lambda x: x*np.exp(-x)
 
-# Gráfica de la simulación de la nueva variable
-plt.hist(Y_muestra,density=True,bins= 100)
-plt.plot(x,f(x))
-plt.plot(x_techo, np.exp(envolvente)/omega, label = 'exp h(x)')
+# Rejilla inicial
+X = [0.4,1,3,8,6,0.25,2.2,1.2] 
+X.sort()
 
 
+acumulado = constructor(X)
+
+tamaño = 100000
+Muestra = np.zeros(tamaño)
+for k in range(tamaño):
+
+    # Transformada inversa
+    u = uniform.rvs(0,1)
+    z = quantil_g(u)
+
+    # Actualizar la rejilla con más puntos
+    actualizador = 1
+    if actualizador <=0:   #Cantidad de actualizaciones
+        for l in range(len(acumulado)):
+            
+            if u > g(z)/f(z):    # Con error por corregir en g
+                X.append(z)
+                actualizador = actualizador + 1
+                acumulado = constructor(X)
+    else:
+        
+        Muestra[k] = z
 
 
+# print(Muestra)
+plt.hist(Muestra,density=True,bins= 100)
+plt.title('Simulación ARS para gamma(2,1)')
+plt.plot(x,f(x),label = 'Gamma(2,1)')
+plt.xlabel('x')
+plt.legend()
+plt.show()
 
 
 
