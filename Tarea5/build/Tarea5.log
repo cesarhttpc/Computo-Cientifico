@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  9 OCT 2023 15:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  10 OCT 2023 00:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -876,7 +876,23 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 238.
- [4] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea5\build\Tarea5.aux
+<Figures/DistGamma.png, id=40, 401.8212pt x 328.8285pt>
+File: Figures/DistGamma.png Graphic file (type png)
+<use Figures/DistGamma.png>
+Package pdftex.def Info: Figures/DistGamma.png  used on input line 251.
+(pdftex.def)             Requested size: 312.9803pt x 256.12895pt.
+<Figures/LogDist.png, id=41, 408.3255pt x 328.8285pt>
+File: Figures/LogDist.png Graphic file (type png)
+<use Figures/LogDist.png>
+Package pdftex.def Info: Figures/LogDist.png  used on input line 267.
+(pdftex.def)             Requested size: 312.9803pt x 252.04971pt.
+ [4 <./Figures/DistGamma.png>]
+<Figures/DistEnvol.png, id=48, 395.3169pt x 328.8285pt>
+File: Figures/DistEnvol.png Graphic file (type png)
+<use Figures/DistEnvol.png>
+Package pdftex.def Info: Figures/DistEnvol.png  used on input line 275.
+(pdftex.def)             Requested size: 312.9803pt x 260.33864pt.
+ [5 <./Figures/LogDist.png> <./Figures/DistEnvol.png>] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea5\build\Tarea5.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -888,17 +904,17 @@ Package rerunfilecheck Info: File `Tarea5.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28167 strings out of 475503
- 545353 string characters out of 5761834
+ 28195 strings out of 475503
+ 545986 string characters out of 5761834
  1943248 words of memory out of 5000000
- 48907 multiletter control sequences out of 15000+600000
+ 48931 multiletter control sequences out of 15000+600000
  581533 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,14n,93p,644b,579s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea5\build\Tarea5.pdf" (4 pages, 164584 bytes).
+Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea5\build\Tarea5.pdf" (5 pages, 241436 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 8 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 99 PDF objects out of 1000 (max. 8388607)
+ 12 named destinations out of 1000 (max. 500000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -35,7 +35,7 @@ def uniforme(n,seed = None):
     return X_t / (modulo -1)
     
 # Ejercicio 2
-n = 200
+n = 100
 U = uniforme(n)
 plt.figure(figsize=(7,5))
 plt.hist(U,density = True)
@@ -87,58 +87,26 @@ while count <= size:
 
 # plt.hist(Y,density= True)
 '''
-#////////////////////
-
-'''
-Simulamos la distribución normal a travez de mezcla de dos exponenciales.
-
-'''
-
-# alpha = 1
-# g2 = lambda x: 4*(alpha/2)* np.exp(-alpha*np.abs(x))
-
-
-# plt.plot(x,f(x))
-# plt.plot(x,g2(x))
-# plt.show()
-
-
-# plt.plot(x,np.log(f(x)))
-# plt.plot(x,np.log(g2(x)))
-
-
-
-
-
 
 # %%
-
-x = np.linspace(0.1,9,100)
+# Ejercicio 5     Adaptive Rejection Sampling
+x = np.linspace(0.01,9,100)
 f = lambda x: x*np.exp(-x)
-# f = lambda x: np.exp(-x**2/2)
 
-# X = [0.5,3,5]
-# X = [0.4,1,2,4]
-X = [0.4,1,2,4,6,7,8]
+# Rejilla inicial
+X = [0.4,1,3,8]
 X.sort()
+
 Y = []
-
-
 n = len(X)
 for i in range(n):
     Y.append(np.log(f(X[i])))
 
-# #Grafica densidad
-# plt.plot(x,f(x))
-# plt.show()
-
-# #Grafica log-densidad
-# plt.plot(x,np.log(f(x)))
-# plt.plot(X,Y,"o")
-# plt.show()
-
 
 def recta(x,x_i,x_j):
+    '''
+    Función que dado dos puntos de la rejilla, calcula sus correspondientes valores en la función log-densidad para con ellos crear una recta entre este par de puntos. Se ingresa tambien un x arbitrario para calcular el valor de la recta para ese dominio.
+    '''
 
     y_i = np.log(f(x_i))
     y_j = np.log(f(x_j))
@@ -147,6 +115,9 @@ def recta(x,x_i,x_j):
     return y
 
 def techo(x):
+    '''
+    Esta función recive un x, devuelve el valor de la envolvente del método ARS en dicho valor de x.
+    '''
     if x <= 0:
         g = 0
     elif (x >= 0 and x < X[0]):
@@ -163,26 +134,47 @@ def techo(x):
                 g = min(recta(x,X[i-1],X[i]),recta(x,X[i+1],X[i+2]))
     return g
 
-x_techo = np.linspace(0.1,9,400) # Dominio para la función techo
+def ftecho(x):
+    return np.exp(techo(x))
 
+
+# Vectorización (ya que la función no puede recibir vectores)
+x_techo = np.linspace(0.1,9,400) # Dominio para la función techo
 envolvente = np.zeros(len(x_techo))
 for i in range(len(x_techo)):
     envolvente[i] = techo(x_techo[i])
 
-##Grafica de la envolvente
-# plt.plot(x_techo,envolvente)
-# plt.show()
 
+### Gráficas de interes
+# Grafica densidad
+plt.plot(x,f(x),label = 'Gamma(2,1)')
+plt.title('Densidad de la distribución Gamma(2,1)')
+plt.xlabel('x')
+plt.legend()
+plt.show()
 
-def ftecho(x):
-    return np.exp(techo(x))
-# ftecho = lambda x: np.exp(techo(x))
+# Grafica log-densidad
+plt.plot(x,np.log(f(x)), label = 'log f(x)')
+plt.plot(X,Y,"o")
+plt.title('Log densidad y su envolvente')
+plt.ylabel('log f(x)')
+plt.xlabel('x')
 
+# Grafica de la envolvente
+plt.plot(x_techo,envolvente, label = 'h(x)')
+plt.legend()
+plt.show()
 
 # Graficar la función de densidad y su acotamiento
-plt.plot(x,f(x))
+plt.plot(x,f(x), label = 'Gamma(2,1)')
 plt.plot(np.array(X),f(np.array(X)),'o')
-plt.plot(x_techo, np.exp(envolvente))
+plt.plot(x_techo, np.exp(envolvente), label = 'exp h(x)')
+plt.title('Densidad y su envolvente')
+plt.xlabel('x')
+plt.legend()
+plt.show()
+
+# %%
 
 omega = integrate.quad(ftecho,0,np.inf)[0]  # Constante de normalidad
 
@@ -192,13 +184,16 @@ def g(x):
 def cdf_g(x):
     return integrate.quad(g,0,x)[0]
 
-#Plot de cdf_g la función acumulada
 acumulado = np.zeros(len(x_techo))
 for j in range(len(x_techo)):
     acumulado[j] = cdf_g(x_techo[j])
+
+
+#Plot de cdf_g la función acumulada
 plt.plot(x_techo,acumulado)  
 plt.show()
 
+# %%
 def quantil_g(x):
     t = 0 
     while cdf_g(t) < x:    
