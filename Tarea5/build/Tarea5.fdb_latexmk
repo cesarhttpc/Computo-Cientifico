@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1696921070 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea5/Tarea5.tex" "build/Tarea5.pdf" "Tarea5" 1696921072 0
+["pdflatex"] 1696969889 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea5/Tarea5.tex" "build/Tarea5.pdf" "Tarea5" 1696969891 0
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693352630 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1693352273 24120579 85898b25958cf632ec7946174c56943b ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -222,10 +222,10 @@
   "Figures/histo1.png" 1696751428 14412 981fc1b26544f57de63a0c121f184e59 ""
   "Figures/histo2.png" 1696751467 13149 da0089d49d43b098e893262003df8b47 ""
   "Figures/histo3.png" 1696752262 13144 d9e15617e46d699313563424571cb3dc ""
-  "Tarea5.tex" 1696921066 12098 5972392a9de1ecee49963d2152f58019 ""
-  "build/Tarea5.aux" 1696921072 2428 7fdc3b8d644f9efab469a004cb134ef5 "pdflatex"
-  "build/Tarea5.out" 1696921071 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea5/Tarea5.tex" 1696921066 12098 5972392a9de1ecee49963d2152f58019 ""
+  "Tarea5.tex" 1696969887 12107 38fa66b0b368983869797aebd6f49ad9 ""
+  "build/Tarea5.aux" 1696969891 2428 7fdc3b8d644f9efab469a004cb134ef5 "pdflatex"
+  "build/Tarea5.out" 1696969890 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea5/Tarea5.tex" 1696969887 12107 38fa66b0b368983869797aebd6f49ad9 ""
   (generated)
   "build/Tarea5.aux"
   "build/Tarea5.log"
