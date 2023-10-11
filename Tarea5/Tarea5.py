@@ -1,11 +1,9 @@
-# %%
 import numpy as np 
 import matplotlib.pyplot as plt 
 import time 
 from scipy.stats import uniform
 import scipy.integrate as integrate
 
-# %%
 # Ejercicio 2
 def uniforme(n,seed = None):
 
@@ -50,7 +48,7 @@ plt.xlabel('x')
 plt.title('Histograma de los valores simulados por scipy')
 plt.show()
 
-# %%
+
 # Ejercicio 5     Adaptive Rejection Sampling
 
 def recta(x,x_i,x_j):
@@ -216,7 +214,7 @@ for k in range(tamaño):
     z = quantil_g(u)
 
     # Actualizar la rejilla con más puntos según accept-reject
-    # Las actualizaciones a la rejilla se hacen manualmente (rejilla inicial), ya que al actualizar un número arbitrario de veces el proceso tarda mucho
+    # Las actualizaciones a la rejilla se hacen manualmente, ya que al actualizar un número arbitrario de veces el proceso tarda mucho. Para hacer las actualizaciones modiquese la rejilla inicial según la condición de aceptación. 
     actualizador = 1
     if actualizador <=0:   #Cantidad de actualizaciones
         actualizador += 1

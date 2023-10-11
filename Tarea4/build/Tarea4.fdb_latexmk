@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1695946702 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea4/Tarea4.tex" "build/Tarea4.pdf" "Tarea4" 1695946704 0
+["pdflatex"] 1697007363 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea4/Tarea4.tex" "build/Tarea4.pdf" "Tarea4" 1697007366 0
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693352630 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1095.pk" 1693352512 21972 ff5acafcaee7d66340f87baf9dd7405d ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1693352273 24120579 85898b25958cf632ec7946174c56943b ""
@@ -219,10 +219,10 @@
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1650051284 20785 71a3d72ab517959a6979c27e6176bec1 ""
   "Figures/EscudoCimat.png" 1693525065 23978 afd125464800623154e6cd8f9742e14b ""
   "Figures/Gerschgorin.png" 1695864219 18653 02b6792ac433c2e528fa77360e643467 ""
-  "Tarea4.tex" 1695946701 11269 00b6462aefb21fd9aa562ad12ce50a93 ""
-  "build/Tarea4.aux" 1695946704 1115 e948fcc77ca25d09673d188f5326e92a "pdflatex"
-  "build/Tarea4.out" 1695946703 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea4/Tarea4.tex" 1695946701 11269 00b6462aefb21fd9aa562ad12ce50a93 ""
+  "Tarea4.tex" 1697007363 15431 9b13eb5541219b21f9756c415c7a5485 ""
+  "build/Tarea4.aux" 1697007365 1156 864152dc2fb8b4cbd327284e49b12f41 "pdflatex"
+  "build/Tarea4.out" 1697007365 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea4/Tarea4.tex" 1697007363 15431 9b13eb5541219b21f9756c415c7a5485 ""
   (generated)
   "build/Tarea4.aux"
   "build/Tarea4.log"

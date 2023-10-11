@@ -247,7 +247,7 @@ Caso $N=5$
       \end{bmatrix}
 \end{align*}
 
-Notese que los elementos fuera de la diagonal son muy cercanos a cero. Vease que los elementos en la diagonal, que son los eignevalores, son aproximadamente de 8.2, 3.8, 1.
+Nótese que los elementos fuera de la diagonal son muy cercanos a cero. Véase que los elementos en la diagonal, que son los eigenvalores, son aproximadamente de 8.2, 3.8, 1.
 
 \end{solution}
 
@@ -296,7 +296,7 @@ La matriz de Householder es unitaria.
 \end{align*}
 donde se usó que $vv^* = \left \| v \right \|^2 $. 
 
-Del hecho de que la matriz de Householder sea hermitiana se sigue que su valores propios existen y son reales. Por el hecho de que H sea unitaria significa que la tranformación generada en una rotación y/o reflexión. Entonces, los vectores propios deben estar en el circulo unitario. Por tanto, sus valores propios son $\pm 1$.
+Del hecho de que la matriz de Householder sea hermitiana se sigue que su valores propios existen y son reales. Por el hecho de que H sea unitaria significa que la transformación generada en una rotación y/o reflexión. Entonces, los vectores propios deben estar en el circulo unitario. Por tanto, sus valores propios son $\pm 1$.
 
 Para ver con formalidad el hecho previo. Tomemos
 \begin{align*}
@@ -315,40 +315,107 @@ Ahora, consideremos un vector $u$ ortogonal al vector inicial $u$, es decir $v^*
 \end{align*}
 como hay $k-1$ vectores ortogonales a $v$, se sigue que 1 es valor propio con multiplicidad $k-1$.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \end{solution}
 
 
 \begin{problem}{4}
-    Demuestra que no es posible construir la tranformación de similaridad del Teorema de Schur con un número finito de tranformaciones de similaridad de Householder.
+    Demuestra que no es posible construir la transformación de similaridad del Teorema de Schur con un número finito de transformaciones de similaridad de Householder.
 \end{problem}
 
+\begin{solution} 
+ 
+Primeramente, consideremos el caso de la matriz 
+\begin{align*}
+    A = \begin{pmatrix}
+        0 &0  &0  &\cdots &0 &-a_0 \\ 
+        1 &0  &0  &\cdots &0 &-a_1 \\ 
+        0 &1  &0  &\cdots &0 &-a_2 \\ 
+        \vdots& \vdots &\vdots  &\ddots  &\vdots & \vdots\\ 
+        0& 0 &0  &\cdots  &1 &-a_{m-2} \\
+        0 &0  &0  & \cdots & 0 & -a_{m-1}
+        \end{pmatrix}
+\end{align*}
+Es preciso notar que el problema de valores propios es equivalente a 
+un problema de solución de raíces de un polinomio. Para ver esto, con la metodología usual, el polinomio característico es
+\begin{align*}
+    det (A - z I) = det\begin{pmatrix}
+        -z &0  &0  &\cdots &0 &-a_0 \\ 
+        1 &-z  &0  &\cdots &0 &-a_1 \\ 
+        0 &1  &-z  &\cdots &0 &-a_2 \\ 
+        \vdots& \vdots &\vdots  &\ddots  &\vdots & \vdots\\ 
+        0& 0 &0  &\cdots  &-z &-a_{m-2} \\
+        0 &0  &0  & \cdots & 1 & -z-a_{m-1}
+        \end{pmatrix}
+\end{align*}
+por cofactores
+\begin{align*}
+    0 &=  det (A - z I)  \\ 
+    &=
+    -a_0
+\begin{vmatrix}
+ 1 &-z  &0  &\cdots &0  \\ 
+0 &1  &-z  &\cdots &0  \\ 
+\vdots& \vdots &\vdots  &\ddots  &\vdots \\ 
+0& 0 &0  &\cdots  &-z  \\
+0 &0  &0  & \cdots & 1 
+\end{vmatrix}
++ a_1
+\begin{vmatrix}
+-z &0  &0  &\cdots &0 \\
+0 &1  &-z  &\cdots &0  \\ 
+\vdots& \vdots &\vdots  &\ddots  &\vdots \\ 
+0& 0 &0  &\cdots  &-z  \\
+0 &0  &0  & \cdots & 1 
+\end{vmatrix}
+- \cdots 
+-(a_{m-1} + z)
+\begin{vmatrix}
+-z &0  &0  &\cdots &0 \\ 
+1 &-z  &0  &\cdots &0 \\ 
+0 &1  &-z  &\cdots &0 \\ 
+\vdots& \vdots &\vdots  &\ddots  &\vdots \\ 
+0& 0 &0  &\cdots  &-z \\
+\end{vmatrix}\\
+&= -a_0 -a_1z - \cdots - (-1)^m a_{m-1} z^{m-1} - (-1)^m z^m.
+\end{align*}
+Así
+\begin{align}
+    z^m + a_{m-1}z^{m-1} + \cdots + a_{1}z + a_0  = 0.
+    \label{4.1}
+\end{align}
+Es decir, conocer los valores propios de la matriz $A$ es equivalente a conocer las raíces del polinomio (\ref{4.1}). 
+
+Procedamos por contradicción. Supongamos que es posible construir la transformación de similaridad del Teorema de Schur con un número finito de transformaciones de similaridad de Householder. Entonces  existe $H_1$ matriz de Householder tal que
+\begin{align*}
+    H_1 A H_1^{-1} = \begin{pmatrix}
+        \lambda_1 & b^T \\ 
+        0  & B 
+        \end{pmatrix}
+\end{align*}
+donde $B$ es una matriz de $m-1 x m-1$. Por este resultado hemos visto que aplicar una transformación de similaridad de Householder nos da el primer valor propio. Aplicando $m-2$ transformaciones de similaridad de Householder se obtendrá que una forma triangular superior. 
+\begin{align*}
+    H_m \cdots H_2H_1 A H_1^{-1}H_2^{-1}\cdots H_m^{-1} = \begin{pmatrix}
+        \lambda_1 & &&& b_1^T \\ 
+        0 & \lambda_2 && &b_2^T\\
+        0  & 0 & \lambda_3&&b_3^T\\
+        \vdots &\vdots & \vdots & \ddots & b_m^T\\
+        0 &0 &0&0&\lambda_m
+        \end{pmatrix}
+\end{align*}
+Entonces con a lo sumo $m$ transformaciones de Householder se puede resolver para cada valor propio. Es decir resuelve el problema de las raíces de un polinomio con una cantidad finita de pasos. Lo que entra en contradicción con el Teorema de Abel-Ruffini que establece que no se puede resolver un polinomio de grado mayor o igual a cinco con coeficientes arbitrarios en términos de radicales. Es decir, no hay forma cerrada para resolver en una cantidad finita de pasos para el polinomio que se planteo. Se concluye el enunciado del ejercicio. 
+\end{solution}
+
+
+
+\newpage
 \begin{problem}{5}
     ?` Qué pasa si aplicas la iteración QR sin shift a una matriz ortogonal? o \textbf{hagan lo que quieran}. Sea $A$ una matriz de Hessenberg superior y sea $QR = A$ la factorización QR de $A$. Muestra que $RQ$ es una matriz superior de Hessenberg.
 \end{problem}
 
+\begin{solution} 
+Como el método de iteración QR sin shift simplemente aplica la factorización QR a la matriz $A$. Sin embargo, sabemos que la factorización QR es única salvo un signo. Luego, si $A$ es ortogonal entonces es su propia factorización QR ya que $A = A I $ donde $ I$ es la matriz identidad. Entonces la operación inversa $RQ$ deja sin alterar el producto ya que $R = I$ por lo que no importa la cantidad de iteraciones que se apliquen, este método no converge a la matriz diagonal en estos casos. De igual forma, se hicieron unos experimentos en el código correspondiente donde se muestra que la matriz no cambia bajo estas iteraciones.
 
-
-
-
-
+\end{solution}
 
 
 
