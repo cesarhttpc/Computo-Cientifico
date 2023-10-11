@@ -1,6 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1696977400 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea5/Tarea5.tex" "build/Tarea5.pdf" "Tarea5" 1696977404 0
+["pdflatex"] 1697010940 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea5/Tarea5.tex" "build/Tarea5.pdf" "Tarea5" 1697010942 0
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693352630 82507 a9eef8696c92627b87e9975edea03b2a ""
+  "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1095.pk" 1693352512 21972 ff5acafcaee7d66340f87baf9dd7405d ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1693352273 24120579 85898b25958cf632ec7946174c56943b ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136793854 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -12,6 +13,7 @@
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplr8t.tfm" 1136793854 3820 ee5b9d58608ae328e43c6e2bfd4ff851 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplri8r.tfm" 1136793854 2720 70000d5e623e601132eab3cded5b819b ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplri8t.tfm" 1136793854 3684 929c666381f7272e81481908b735ccba ""
+  "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ectt1095.tfm" 993062342 1352 fa21dcb5ddc7d1dc47d14cd897fdeb0f ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1233951854 908 2921f8a10601f252058503cc6570e581 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmex10.tfm" 1136765053 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
@@ -150,6 +152,7 @@
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty" 1687174146 5119 50695b8f743569fbac71a83f7ef51fe2 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/base/inputenc.sty" 1687174146 5048 4a74b0804469fbfae7849704c4687a07 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/base/size11.clo" 1687174146 8464 a4a9a859b7fd5b6c1450673c4d301348 ""
+  "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/base/t1cmtt.fd" 1687174146 2443 955a820f7890344dc6c6ca236a5c2990 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/comment/comment.sty" 1468691282 10197 204f75d5d8d88aa345a8c402e879e63b ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.sty" 1561039820 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1623003186 13886 d1306dcf79a944f6988e688c1785f9ce ""
@@ -224,10 +227,10 @@
   "Figures/histo1.png" 1696751428 14412 981fc1b26544f57de63a0c121f184e59 ""
   "Figures/histo2.png" 1696751467 13149 da0089d49d43b098e893262003df8b47 ""
   "Figures/histo3.png" 1696752262 13144 d9e15617e46d699313563424571cb3dc ""
-  "Tarea5.tex" 1696977398 14601 6c1199d809092dcaa256f1de2d111221 ""
-  "build/Tarea5.aux" 1696977403 3015 a721a64ed6c67d23860856f038c4c071 "pdflatex"
-  "build/Tarea5.out" 1696977402 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea5/Tarea5.tex" 1696977398 14601 6c1199d809092dcaa256f1de2d111221 ""
+  "Tarea5.tex" 1697010939 17612 5f36690a4b58b0969a4a1ab49ac52838 ""
+  "build/Tarea5.aux" 1697010942 3036 55ae5e347a55971b8fe382f3c77dd89e "pdflatex"
+  "build/Tarea5.out" 1697010941 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea5/Tarea5.tex" 1697010939 17612 5f36690a4b58b0969a4a1ab49ac52838 ""
   (generated)
   "build/Tarea5.aux"
   "build/Tarea5.log"

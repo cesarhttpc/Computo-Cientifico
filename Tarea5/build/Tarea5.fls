@@ -447,6 +447,10 @@ INPUT .\Figures\histo3.png
 INPUT .\Figures\histo3.png
 INPUT .\Figures\histo3.png
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplri8t.tfm
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\tex\latex\base\t1cmtt.fd
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\tex\latex\base\t1cmtt.fd
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\tex\latex\base\t1cmtt.fd
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 INPUT .\Figures\DistGamma.png
 INPUT .\Figures\DistGamma.png
 INPUT .\Figures\DistGamma.png
@@ -454,14 +458,14 @@ INPUT .\Figures\DistGamma.png
 INPUT .\Figures\DistGamma.png
 INPUT .\Figures\DistGamma.png
 INPUT .\Figures\DistGamma.png
-INPUT .\Figures\LogDist.png
-INPUT .\Figures\LogDist.png
-INPUT .\Figures\LogDist.png
-INPUT .\Figures\LogDist.png
-INPUT .\Figures\LogDist.png
-INPUT .\Figures\LogDist.png
-INPUT .\Figures\LogDist.png
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplri8t.vf
+INPUT .\Figures\LogDist.png
+INPUT .\Figures\LogDist.png
+INPUT .\Figures\LogDist.png
+INPUT .\Figures\LogDist.png
+INPUT .\Figures\LogDist.png
+INPUT .\Figures\LogDist.png
+INPUT .\Figures\LogDist.png
 INPUT .\Figures\DistEnvol.png
 INPUT .\Figures\DistEnvol.png
 INPUT .\Figures\DistEnvol.png
@@ -483,9 +487,15 @@ INPUT .\Figures\Resultado.png
 INPUT .\Figures\Resultado.png
 INPUT .\Figures\Resultado.png
 INPUT .\Figures\Resultado.png
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr8t.tfm
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8t.tfm
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplb8t.vf
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8r.tfm
 INPUT c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea5\build\Tarea5.aux
 INPUT c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea5\build\Tarea5.out
 INPUT c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea5\build\Tarea5.out
+INPUT C:\Users\ce_ra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
+INPUT C:\Users\ce_ra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
