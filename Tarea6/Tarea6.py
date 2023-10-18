@@ -26,8 +26,27 @@ def posterior(p,r,n):
         f_x = 0
     return f_x
 
-def MetropolisHastings(n,r,tamañoMuestra = 50000, objetivo = posterior):
+def MetropolisHastings(n,r,tamañoMuestra = 20000, objetivo = posterior, propuesta = 'Beta'):
+    '''
+    Método de Metropolis-Hastings para simulación de variables aleatorias. Dicho método requiere de la previa simulación de una v.a. (simple) en este caso tomamos la distribución beta, como propuesta para generar simulaciones de una distribución descrita en la función objetivo (llamada posterior por aplicaciones a inferencia bayesiana). Dicho método tiene una distribución del punto inicial en una uniforme (0,1/2). La cadena de Markov generada recursivamente según el experimento Bernoulli donde la probabilidad de trancisión al estado propuesto es dada por la expresión con el mínimo y el cociente entre densidades.
 
+    Input: 
+        n:
+            Es parámetro de la distribución objetivo (cantidad de simulaciones bernoulli)
+
+        r:
+            Es la cantidad de éxitos de la previa simulación Bernoulli, tambien es parámetro de la distribución posterior (ver pdf)
+
+        tamañoMuestra: 
+            Cantidad de pasos en la cadena de Markov.
+
+        objetivo:
+            Distribución objetivo a muestrear v.a.
+
+        propuesta:
+            Distribución propuesta de donde se simulan v.a. para generar de la objetivo según MH.
+    
+    '''
     q = beta(r+1,n-r+1)
 
 
@@ -39,16 +58,24 @@ def MetropolisHastings(n,r,tamañoMuestra = 50000, objetivo = posterior):
 
     for k in range(tamañoMuestra-1):
 
-        # Simulación de q
-        y = beta.rvs(r+1,n-r+1)
+        if propuesta == 'Beta':
+            # Simulación de q
+            y = beta.rvs(r+1,n-r+1)
+            # Cadena de Markov
+            cociente = (objetivo(y,r,n)/objetivo(x,r,n))*(q.pdf(x)/q.pdf(y))
+            p_min = min(1,cociente)
 
-        # Cadena de Markov
-        cociente = (objetivo(y,r,n)/objetivo(x,r,n))*(q.pdf(x)/q.pdf(y))
-        p_min = min(1,cociente)
+        elif propuesta == 'Uniforme':
+            # Simulación de q
+            y = uniform.rvs(0,1/2)
+            # Cadena de Markov
+            cociente = (objetivo(y,r,n)/objetivo(x,r,n))
+            p_min = min(1,cociente)
+        else:
+            print('Error de elección de propuesta')
 
-        # if ber(p_min,1) == 1:
-        if uniform.rvs(0,1) < p_min :    # Forma alterna
-
+        # Transición de la cadena
+        if uniform.rvs(0,1) < p_min :    #Ensayo Bernoulli
             Muestra[k+1] = y
             x = y
         else:
@@ -57,7 +84,7 @@ def MetropolisHastings(n,r,tamañoMuestra = 50000, objetivo = posterior):
     return Muestra
 
 # Semilla   
-rnd = 4  # 2 y 4 predeterminado, 35 es mala
+rnd = 2  # 2 y 4 predeterminado, 35 es mala
 
 # Ejercicio 1
 print("Ejercicio 1: ")
@@ -76,7 +103,7 @@ print("Simulación para n = %u: "%n2, simulacion)
 print("r: ",r2,"\n")
 
 # ----------------------------------------------
-# Ejercicio 2 y 3
+# Ejercicio 2 
 
 # Graficar la función objetivo
 soporte = np.linspace(0,1/2,100)
@@ -119,9 +146,9 @@ plt.show()
 fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
 fig.suptitle('Metropolis-Hastings (n = %u,r =%u) y (n = %u, r= %u)'%(n1,r1,n2,r2))
 ax1.plot(soporte, posterior1_vec, label = 'n = %u, r = %u' %(n1,r1))
-ax2.hist(muestra1,density=True,bins = 70)
-ax3.plot(soporte, posterior2_vec, label = 'n = %u, r = %u' %(n2,r2))
-ax4.hist(muestra2,density=True,bins = 70)
+ax2.hist(muestra1,density=True,bins = 60)
+ax3.plot(soporte, posterior2_vec, color = 'orange',label = 'n = %u, r = %u' %(n2,r2))
+ax4.hist(muestra2,color = 'orange',density=True,bins = 60)
 
 for ax in fig.get_axes():
     ax.label_outer()
@@ -130,17 +157,43 @@ plt.show()
 
 # Graficas de la cadena de Markov
 chequeo1 = MetropolisHastings(n1,r1,tamañoMuestra=80)
-plt.plot(chequeo1)
-plt.show()
-
 chequeo2 = MetropolisHastings(n1,r1,tamañoMuestra=80)
-plt.plot(chequeo2)
+
+fig, (ax1, ax2) = plt.subplots(2, sharex=True)
+fig.suptitle('Cadena de Markov de M-H')
+ax1.plot(chequeo1)
+ax2.plot(chequeo2,color = 'orange')
 plt.show()
 
+# --------------------------------------
+# Ejercicio 4
 
+# Metropolis-Hastings para una propuesta uniforme en (0,1/2)
+Muestra1Propuesta = MetropolisHastings(n1,r1,propuesta='Uniforme')
+Muestra2Propuesta = MetropolisHastings(n1,r1,propuesta='Uniforme')
 
+# Graficas de la simulación
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
+fig.suptitle('Metropolis-Hastings (n = %u,r =%u) y (n = %u, r= %u)'%(n1,r1,n2,r2))
+ax1.plot(soporte, posterior1_vec, label = 'n = %u, r = %u' %(n1,r1))
+ax2.hist(Muestra1Propuesta,density=True,bins = 60)
+ax3.plot(soporte, posterior2_vec, color = 'orange',label = 'n = %u, r = %u' %(n2,r2))
+ax4.hist(Muestra2Propuesta,color = 'orange',density=True,bins = 60)
 
+for ax in fig.get_axes():
+    ax.label_outer()
 
+plt.show()
+
+# Graficas de la cadena de Markov
+chequeo1Prop = MetropolisHastings(n1,r1,tamañoMuestra=80)
+chequeo2Prop = MetropolisHastings(n1,r1,tamañoMuestra=80)
+
+fig, (ax1, ax2) = plt.subplots(2, sharex=True)
+fig.suptitle('Cadena de Markov de M-H propuesta uniforme')
+ax1.plot(chequeo1Prop)
+ax2.plot(chequeo2Prop,color = 'orange')
+plt.show()
 
 
 

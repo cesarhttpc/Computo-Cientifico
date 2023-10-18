@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1697603140 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea6/Tarea6.tex" "build/Tarea6.pdf" "Tarea6" 1697603142 0
+["pdflatex"] 1697603237 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea6/Tarea6.tex" "build/Tarea6.pdf" "Tarea6" 1697603239 0
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693352630 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1693352273 24120579 85898b25958cf632ec7946174c56943b ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -208,11 +208,11 @@
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1650051284 2245 c8a4088d07cffc2e5207730c738edd76 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1650051284 20785 71a3d72ab517959a6979c27e6176bec1 ""
-  "Figures/EscudoCimat.png" 1693525065 23978 afd125464800623154e6cd8f9742e14b ""
-  "Tarea6.tex" 1697603140 4908 60e9f4f12aa80e429d16b95b427f54e1 ""
-  "build/Tarea6.aux" 1697603142 751 4478827c061ec31517f6dace0387c1ec "pdflatex"
-  "build/Tarea6.out" 1697603142 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea6/Tarea6.tex" 1697603140 4908 60e9f4f12aa80e429d16b95b427f54e1 ""
+  "Figures/EscudoCimat.png" 1697603232 23978 afd125464800623154e6cd8f9742e14b ""
+  "Tarea6.tex" 1697603232 4908 60e9f4f12aa80e429d16b95b427f54e1 ""
+  "build/Tarea6.aux" 1697603239 751 4478827c061ec31517f6dace0387c1ec "pdflatex"
+  "build/Tarea6.out" 1697603238 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea6/Tarea6.tex" 1697603232 4908 60e9f4f12aa80e429d16b95b427f54e1 ""
   (generated)
   "build/Tarea6.aux"
   "build/Tarea6.log"
