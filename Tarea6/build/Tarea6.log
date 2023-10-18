@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  17 OCT 2023 22:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  18 OCT 2023 02:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -840,16 +840,64 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 136.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 148.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 156.
+(mdframed)              on input line 154.
+<Figures/Metropolis.png, id=8, 402.5439pt x 333.1647pt>
+File: Figures/Metropolis.png Graphic file (type png)
+<use Figures/Metropolis.png>
+Package pdftex.def Info: Figures/Metropolis.png  used on input line 177.
+(pdftex.def)             Requested size: 398.33858pt x 329.69173pt.
  [1
 
-{C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Figures/EscudoCimat.png>] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea6\build\Tarea6.aux
+{C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Figures/EscudoCimat.png>]
+<Figures/Metropolis2.png, id=24, 398.2077pt x 333.1647pt>
+File: Figures/Metropolis2.png Graphic file (type png)
+<use Figures/Metropolis2.png>
+Package pdftex.def Info: Figures/Metropolis2.png  used on input line 185.
+(pdftex.def)             Requested size: 398.33858pt x 333.28587pt.
+ [2 <./Figures/Metropolis.png>]
+<Figures/Cadena.png, id=31, 395.3169pt x 333.1647pt>
+File: Figures/Cadena.png Graphic file (type png)
+<use Figures/Cadena.png>
+Package pdftex.def Info: Figures/Cadena.png  used on input line 195.
+(pdftex.def)             Requested size: 341.43306pt x 287.75139pt.
+ [3 <./Figures/Metropolis2.png>]
+<Figures/Cadena2.png, id=38, 395.3169pt x 333.1647pt>
+File: Figures/Cadena2.png Graphic file (type png)
+<use Figures/Cadena2.png>
+Package pdftex.def Info: Figures/Cadena2.png  used on input line 202.
+(pdftex.def)             Requested size: 341.43306pt x 287.75139pt.
+ [4 <./Figures/Cadena.png> <./Figures/Cadena2.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 210.
+Package mdframed Info: Not enough space on this page on input line 212.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 226.
+<Figures/MetropolisProuesta.png, id=47, 403.2666pt x 333.1647pt>
+File: Figures/MetropolisProuesta.png Graphic file (type png)
+<use Figures/MetropolisProuesta.png>
+Package pdftex.def Info: Figures/MetropolisProuesta.png  used on input line 241.
+(pdftex.def)             Requested size: 398.33858pt x 329.10202pt.
+ [5]
+<Figures/Metropolis2Propuesta.png, id=53, 395.3169pt x 333.1647pt>
+File: Figures/Metropolis2Propuesta.png Graphic file (type png)
+<use Figures/Metropolis2Propuesta.png>
+Package pdftex.def Info: Figures/Metropolis2Propuesta.png  used on input line 249.
+(pdftex.def)             Requested size: 398.33858pt x 335.7108pt.
+ [6 <./Figures/MetropolisProuesta.png>]
+<Figures/CadenaPropuesta.png, id=60, 395.3169pt x 333.1647pt>
+File: Figures/CadenaPropuesta.png Graphic file (type png)
+<use Figures/CadenaPropuesta.png>
+Package pdftex.def Info: Figures/CadenaPropuesta.png  used on input line 258.
+(pdftex.def)             Requested size: 341.43306pt x 287.75139pt.
+ [7 <./Figures/Metropolis2Propuesta.png>]
+<Figures/Cadena2Propuesta.png, id=68, 395.3169pt x 333.1647pt>
+File: Figures/Cadena2Propuesta.png Graphic file (type png)
+<use Figures/Cadena2Propuesta.png>
+Package pdftex.def Info: Figures/Cadena2Propuesta.png  used on input line 265.
+(pdftex.def)             Requested size: 341.43306pt x 287.75139pt.
+ [8 <./Figures/CadenaPropuesta.png> <./Figures/Cadena2Propuesta.png>] [9] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea6\build\Tarea6.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -861,17 +909,17 @@ Package rerunfilecheck Info: File `Tarea6.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28093 strings out of 475503
- 544003 string characters out of 5761834
- 1931248 words of memory out of 5000000
- 48846 multiletter control sequences out of 15000+600000
- 578485 words of font info for 82 fonts, out of 8000000 for 9000
+ 28204 strings out of 475503
+ 546403 string characters out of 5761834
+ 1938248 words of memory out of 5000000
+ 48932 multiletter control sequences out of 15000+600000
+ 584537 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,93p,639b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea6\build\Tarea6.pdf" (1 page, 108197 bytes).
+ 84i,11n,93p,887b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea6\build\Tarea6.pdf" (9 pages, 375120 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 2 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

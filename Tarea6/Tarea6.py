@@ -84,7 +84,7 @@ def MetropolisHastings(n,r,tamañoMuestra = 20000, objetivo = posterior, propues
     return Muestra
 
 # Semilla   
-rnd = 2  # 2 y 4 predeterminado, 35 es mala
+rnd = 2  # 2 y 4
 
 # Ejercicio 1
 print("Ejercicio 1: ")
@@ -170,7 +170,7 @@ plt.show()
 
 # Metropolis-Hastings para una propuesta uniforme en (0,1/2)
 Muestra1Propuesta = MetropolisHastings(n1,r1,propuesta='Uniforme')
-Muestra2Propuesta = MetropolisHastings(n1,r1,propuesta='Uniforme')
+Muestra2Propuesta = MetropolisHastings(n2,r2,propuesta='Uniforme')
 
 # Graficas de la simulación
 fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
@@ -186,8 +186,8 @@ for ax in fig.get_axes():
 plt.show()
 
 # Graficas de la cadena de Markov
-chequeo1Prop = MetropolisHastings(n1,r1,tamañoMuestra=80)
-chequeo2Prop = MetropolisHastings(n1,r1,tamañoMuestra=80)
+chequeo1Prop = MetropolisHastings(n1,r1,tamañoMuestra=80, propuesta= 'Uniforme')
+chequeo2Prop = MetropolisHastings(n1,r1,tamañoMuestra=80, propuesta= 'Uniforme')
 
 fig, (ax1, ax2) = plt.subplots(2, sharex=True)
 fig.suptitle('Cadena de Markov de M-H propuesta uniforme')
