@@ -1,0 +1,179 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment}
+\usepackage{lipsum} 
+\usepackage{fullpage} %cambiar margen
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+
+\usepackage{amssymb,amsthm} 
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+%\usepackage[numbered]{mcode}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows,calc,positioning}
+\usepackage{mathpazo} %tipo de letra 
+\usepackage[utf8]{inputenc} %codificación
+\usepackage[T1]{fontenc} %digitación de tildes y ñ
+\usepackage[spanish]{babel} %paquete de soporte español
+
+\tikzset{
+	block/.style = {draw, rectangle,
+		minimum height=1cm,
+		minimum width=1.5cm},
+	input/.style = {coordinate,node distance=1cm},
+	output/.style = {coordinate,node distance=4cm},
+	arrow/.style={draw, -latex,node distance=2cm},
+	pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+	sum/.style = {draw, circle, node distance=1cm},
+}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+
+\usepackage{listings}
+\lstset{literate=
+  {á}{{\'a}}1
+  {é}{{\'e}}1
+  {í}{{\'i}}1
+  {ó}{{\'o}}1
+  {ú}{{\'u}}1
+  {Á}{{\'A}}1
+  {É}{{\'E}}1
+  {Í}{{\'I}}1
+  {Ó}{{\'O}}1
+  {Ú}{{\'U}}1
+  {ñ}{{\~n}}1
+  {ü}{{\"u}}1
+  {Ü}{{\"U}}1
+}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Python,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\newenvironment{problem}[2][Ejercicio]
+{ \begin{mdframed}[backgroundcolor= red!50] \textbf{#1 #2} \\}
+	{  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}
+{\textcolor{blue}{\textbf{\textit{Solución:\\\noindent}}}}
+
+
+\renewcommand{\qed}{\quad\qedsymbol}
+
+% \\	
+\begin{document}
+	\noindent
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{minipage}[b][1.2cm][t]{0.8\textwidth}
+		\large\textbf{César Isaí García Cornejo} \hfill \textbf{Tarea 6}  \\
+		cesar.cornejo@cimat.mx \hfill \\
+		\normalsize Computo Científico \hfill Semestre 3\\
+	\end{minipage}
+	
+	\hspace{14.4cm}
+	\begin{minipage}[b][0.03cm][t]{0.12\linewidth}
+		
+		\vspace{-2.2cm}
+		%%%La Ruta dependerá de donde este alojado el main y la imagen
+		\includegraphics[scale=0.3]{Figures/EscudoCimat.png}
+	\end{minipage}
+	
+	\noindent\rule{7in}{2.8pt}
+	
+	%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Problem 1
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setlength{\parskip}{\medskipamount}
+	\setlength{\parindent}{0pt}
+%/////////// Ejercicio 1 /////////////////
+
+    
+\begin{problem}{1} 
+    Simular $n=5$ y $n=40$ v.a. Bernoulli $Be(1/3)$; sea $r$ el número de éxitos en cada caso.
+\end{problem}
+
+\begin{solution} 
+    
+\end{solution}
+
+\begin{problem}{2} 
+    Implementar el algoritmo Metropolis-Hastings para simular de la posterior
+    \begin{align*}
+        f(p|\bar{x }) \propto p^r (1-p )^{n-r } cos(\pi p ) I_{[0,\frac{1}{2}]}(p),
+    \end{align*}
+    con los dos casos de $n$ y $r$ de arriba. Para ello poner la propuesta $(p'|p ) = p' \sim Bete(r+1,n-r+1)$ y la distribución inicial de la cadena $\mu \sim U(0,\frac{1}{2})$
+\end{problem}
+
+\begin{solution} 
+  
+\end{solution}
+
+\begin{problem}{3} 
+    Argumentar porque la cadena es $f$-irreducible y porque es ergódica. Implementar el algoritmo con los datos descritos y discutir los resultados.
+\end{problem}
+
+\begin{solution} 
+  
+\end{solution}
+
+\begin{problem}{4} 
+    Implementar el algoritmo Metropolis-Hastings con la posterior de arriba tomando una propuesta diferente.
+\end{problem}
+
+\begin{solution} 
+  
+\end{solution}
+
+% \begin{thebibliography}{9}
+
+%     \bibitem{Casella}
+%     Robert, C. P., Casella, G., and Casella, G. (1999). Monte Carlo statistical methods (Vol. 2). New York: Springer.
+    
+%     % \bibitem{Scipy.stats}
+%     % https://github.com/scipy/scipy/blob/v1.11.3/scipy/stats/_continuous_distns.py#L9766-L9946
+    
+    
+% \end{thebibliography}
+      
+
+
+
+
+    \end{document}
