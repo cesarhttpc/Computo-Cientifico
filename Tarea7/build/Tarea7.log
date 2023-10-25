@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  24 OCT 2023 22:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  24 OCT 2023 23:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -857,10 +857,10 @@ Package pdftex.def Info: Figures/contorno2.png  used on input line 162.
 {C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Figures/EscudoCimat.png>] [2 <./Figures/contorno1.png> <./Figures/contorno2.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 194.
+(mdframed)              on input line 195.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 204.
+(mdframed)              on input line 205.
  [3] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea7\build\Tarea7.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
@@ -881,7 +881,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,16n,93p,639b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea7\build\Tarea7.pdf" (3 pages, 204673 bytes).
+Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea7\build\Tarea7.pdf" (3 pages, 204697 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  14 named destinations out of 1000 (max. 500000)

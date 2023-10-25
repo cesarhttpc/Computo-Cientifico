@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1698208879 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea7/Tarea7.tex" "build/Tarea7.pdf" "Tarea7" 1698208882 0
+["pdflatex"] 1698210330 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea7/Tarea7.tex" "build/Tarea7.pdf" "Tarea7" 1698210334 0
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693352630 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1693352273 24120579 85898b25958cf632ec7946174c56943b ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -218,10 +218,10 @@
   "Figures/EscudoCimat.png" 1697603232 23978 afd125464800623154e6cd8f9742e14b ""
   "Figures/contorno1.png" 1698204976 38337 ba4f4b693fb76fa410e19a52db9274f4 ""
   "Figures/contorno2.png" 1698204990 29310 d83e1b96db7d232f9b34eb63b0597004 ""
-  "Tarea7.tex" 1698208878 7829 31efeff5901e83b319889768ab2060e1 ""
-  "build/Tarea7.aux" 1698208881 1237 0c5763318ddc8987837a2f626b170700 "pdflatex"
-  "build/Tarea7.out" 1698208881 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea7/Tarea7.tex" 1698208878 7829 31efeff5901e83b319889768ab2060e1 ""
+  "Tarea7.tex" 1698210328 7865 ed4a18343f8266b8e0fb3ac7d8fc18f5 ""
+  "build/Tarea7.aux" 1698210334 1237 0c5763318ddc8987837a2f626b170700 "pdflatex"
+  "build/Tarea7.out" 1698210333 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea7/Tarea7.tex" 1698210328 7865 ed4a18343f8266b8e0fb3ac7d8fc18f5 ""
   (generated)
   "build/Tarea7.aux"
   "build/Tarea7.log"
