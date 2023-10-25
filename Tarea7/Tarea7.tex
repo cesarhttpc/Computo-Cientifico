@@ -376,7 +376,52 @@ Por último, eliminando el burn-in y tomando el histograma con la simulación es
 % \end{enumerate}
 
 \begin{solution} 
+  Análogo a los ejercicios previos, tenemos que implementar un Metropolis-Hastings con caminata aleatoria. Tenemos como distribución una normal bivariada como se describe en el enunciado. Haremos tres experimentos. Empezamos la caminata aleatoria desde putos distantes como (40,1) (100,1) y (1000,1). Tomamos $\sigma = $ 0.5 ya que tomar uno mayor hace que los saltos sean muy bruscos por lo que no consigue converger a la distribución objetivo de forma óptima.
+
+  \begin{figure}[H] 
+      \centering 
+      \includegraphics[width = 14cm]{Figures/exp1.png} 
+      \caption{M-H con punto inicial (40,1)}
+      \label{Fig. 3.01}
+  \end{figure} 
+
+  \begin{figure}[H] 
+    \centering 
+    \includegraphics[width = 14cm]{Figures/exp2.png} 
+    \caption{M-H con punto inicial (100,1)}
+    \label{Fig. 3.02}
+  \end{figure} 
   
+  \begin{figure}[H] 
+    \centering 
+    \includegraphics[width = 14cm]{Figures/exp3.png} 
+    \caption{M-H con punto inicial (1000,1)}
+    \label{Fig. 3.03}
+  \end{figure} 
+
+  Veamos que cuando el punto inicial es cercano se puede converger a la distribución objetivo con 50000 iteraciones. Aún en el caso con punto inicial (100,1) tenemos que dicha caminata bordea la distribución hasta que finalmente converge a la objetivo. Sin embargo para el punto (1000,1) no bastan las 50000 iteraciones. Se puede modificar el valor de $\sigma$ pero ponerlo más grande ocasiona que se vaya más lejos y tenga una convergencia aún más lenta.
+
+
+  Por otro lado, si cambiamos la propuesta como un cuadrado uniforme como en el ejercicio uno, tenemos un comportamiento similar al de la propuesta normal. Con el punto inicial (100,1) tenemos una convergencia tardía como mostramos en la siguiente grafica
+  \begin{figure}[H] 
+      \centering 
+      \includegraphics[width = 14 cm]{Figures/exp4.png} 
+      \caption{Metropolis-Hastings para la normal bivariada con propuesta uniforme y punto inicial (100,1)}
+      \label{Fig. 3.04}
+  \end{figure} 
+
+  Nuevamente, aumentar el valor del tamaño de la uniforme ($\epsilon$) produce pasos grandes y por tanto la convergencia no es precisa, pues oscila de su distribución objetivo. Bajar el valor de $\epsilon$ implica que tiene pasos pequeños y no llega con la cantidad de iteraciones propuestas.
+
+
+
+
+
+
+
+
+
+
+
 \end{solution}
 
 \begin{thebibliography}{9}

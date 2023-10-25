@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  25 OCT 2023 05:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  25 OCT 2023 07:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -974,7 +974,29 @@ Package pdftex.def Info: Figures/2_histo_unif.png  used on input line 348.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 356.
- [15 <./Figures/2_histo_unif.png>] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea7\build\Tarea7.aux
+<Figures/exp1.png, id=147, 414.8298pt x 328.8285pt>
+File: Figures/exp1.png Graphic file (type png)
+<use Figures/exp1.png>
+Package pdftex.def Info: Figures/exp1.png  used on input line 383.
+(pdftex.def)             Requested size: 398.33858pt x 315.7671pt.
+ [15 <./Figures/2_histo_unif.png>]
+<Figures/exp2.png, id=154, 418.4433pt x 328.8285pt>
+File: Figures/exp2.png Graphic file (type png)
+<use Figures/exp2.png>
+Package pdftex.def Info: Figures/exp2.png  used on input line 390.
+(pdftex.def)             Requested size: 398.33858pt x 313.03256pt.
+<Figures/exp3.png, id=155, 414.8298pt x 328.8285pt>
+File: Figures/exp3.png Graphic file (type png)
+<use Figures/exp3.png>
+Package pdftex.def Info: Figures/exp3.png  used on input line 397.
+(pdftex.def)             Requested size: 398.33858pt x 315.7671pt.
+ [16 <./Figures/exp1.png> <./Figures/exp2.png>]
+<Figures/exp4.png, id=164, 425.6703pt x 328.8285pt>
+File: Figures/exp4.png Graphic file (type png)
+<use Figures/exp4.png>
+Package pdftex.def Info: Figures/exp4.png  used on input line 408.
+(pdftex.def)             Requested size: 398.33858pt x 307.72403pt.
+ [17 <./Figures/exp3.png>] [18 <./Figures/exp4.png>] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea7\build\Tarea7.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -986,17 +1008,17 @@ Package rerunfilecheck Info: File `Tarea7.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28355 strings out of 475503
- 549796 string characters out of 5761834
+ 28394 strings out of 475503
+ 550537 string characters out of 5761834
  1931248 words of memory out of 5000000
- 49057 multiletter control sequences out of 15000+600000
+ 49089 multiletter control sequences out of 15000+600000
  582129 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,16n,93p,643b,525s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea7\build\Tarea7.pdf" (15 pages, 892763 bytes).
+Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea7\build\Tarea7.pdf" (18 pages, 1063783 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 240 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

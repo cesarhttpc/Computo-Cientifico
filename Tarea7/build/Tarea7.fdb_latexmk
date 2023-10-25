@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1698232105 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea7/Tarea7.tex" "build/Tarea7.pdf" "Tarea7" 1698232109 0
+["pdflatex"] 1698239353 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea7/Tarea7.tex" "build/Tarea7.pdf" "Tarea7" 1698239357 0
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693352630 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1693352273 24120579 85898b25958cf632ec7946174c56943b ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -236,12 +236,16 @@
   "Figures/cadenaMarkov2Prop.png" 1698218155 40712 bbfe6480f0c63e16ec65175454d27fde ""
   "Figures/contorno1.png" 1698204976 38337 ba4f4b693fb76fa410e19a52db9274f4 ""
   "Figures/contorno2.png" 1698204990 29310 d83e1b96db7d232f9b34eb63b0597004 ""
+  "Figures/exp1.png" 1698238214 67821 c0795d308d1f98bffe19bad97256a255 ""
+  "Figures/exp2.png" 1698238251 99279 41231904bf86f451c0c9b9c530c451b3 ""
+  "Figures/exp3.png" 1698238283 22772 ffaac641aeec8f6149ec27aff53c1591 ""
+  "Figures/exp4.png" 1698239049 88378 b676a1e674cd05081a7b3abc503e4afd ""
   "Figures/samplingprop1.png" 1698218475 79307 e0cdf79bcf8a8e9c0c0b9191eae6ac49 ""
   "Figures/samplingprop2.png" 1698218487 75778 4720f5c045abbb34d950a60f3a41c613 ""
-  "Tarea7.tex" 1698232101 17180 404e5dec328675317b80410cb4e97eb6 ""
-  "build/Tarea7.aux" 1698232109 7330 c4f95d9171b3790b335776604fbac373 "pdflatex"
-  "build/Tarea7.out" 1698232107 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea7/Tarea7.tex" 1698232101 17180 404e5dec328675317b80410cb4e97eb6 ""
+  "Tarea7.tex" 1698239352 19495 c4a3a6fa944723e38187a7d5b65aa2b2 ""
+  "build/Tarea7.aux" 1698239357 8326 bd627fe73a7053d1fd91b1c92bc9a521 "pdflatex"
+  "build/Tarea7.out" 1698239355 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea7/Tarea7.tex" 1698239352 19495 c4a3a6fa944723e38187a7d5b65aa2b2 ""
   (generated)
   "build/Tarea7.aux"
   "build/Tarea7.log"

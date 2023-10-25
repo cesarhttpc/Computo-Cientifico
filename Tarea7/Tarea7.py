@@ -1,7 +1,7 @@
 # %%
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import gamma, norm, uniform, expon
+from scipy.stats import gamma, norm, uniform, expon, multivariate_normal
 from scipy.special import gamma as Fgamma
 
 np.random.seed(2)
@@ -361,12 +361,103 @@ plt.xlabel('t')
 plt.show()
 
 
-# plt.plot(Muestra[50:200])
 
 
 
+# Ejercicio 3
+def MHnormal(tamañoMuestra = 1000, propuesta = 'Normal'):
 
-# %%
-z = expon.rvs(scale = 1, size = 30)
-print(z)
+
+    # punto inicial 
+    x = np.array([100,1])   # [40,1]    [1000,1]
+
+    Muestra1 = np.zeros(tamañoMuestra)  # x_1
+    Muestra2 = np.zeros(tamañoMuestra)  # x_2
+    Muestra1[0] = x[0]
+    Muestra2[0] = x[1] 
+
+    for k in range(tamañoMuestra-1):
+
+        if propuesta == 'Normal':
+
+            sigma1 = 0.5
+            sigma2 = 0.5
+            e1 = norm.rvs(0,sigma1)
+            e2 = norm.rvs(0,sigma2)
+            e = np.array([e1,e2])
+            y = x + e 
+        
+        elif propuesta == 'Uniforme':
+            epsilon1 = 1
+            epsilon2 = 1
+            e1 = (1-2*uniform.rvs(0,1))*epsilon1
+            e2 = (1-2*uniform.rvs(0,1))*epsilon2
+
+            e = np.array([e1,e2])
+            y = x + e
+
+        # Cadena de Markov
+        cociente = MulNor.pdf(np.array([y[0],y[1]]))/MulNor.pdf(np.array([x[0],x[1]]))
+
+        p_min = min(1,cociente)
+
+        # Transición de la cadena
+        if uniform.rvs(0,1) < p_min :    #Ensayo Bernoulli
+            Muestra1[k+1] = y[0]
+            Muestra2[k+1] = y[1]
+            x = y
+        else:
+            Muestra1[k+1] = x[0]
+            Muestra2[k+1] = x[1]
+        
+    return Muestra1,Muestra2
+
+
+
+mean = np.array([3,5])
+cov = np.array([[1,0.9],[0.9,1]])
+MulNor = multivariate_normal(mean, cov)  
+
+# Grafica trayectoria
+Muestra1, Muestra2 = MHnormal(tamañoMuestra= 50000)
+plt.plot(Muestra1,Muestra2, linewidth = .5, color = 'gray')
+
+# Grafica contorno inicial
+print("Graficas de contorno")
+x, y = np.meshgrid(np.linspace(-2, 6, 200), 
+                   np.linspace(-2, 10, 200))
+
+pos = np.dstack((x, y))
+z = MulNor.pdf(pos)
+
+
+plt.contour(x,y,z, levels = 300,linewidths = .9 , cmap = 'inferno' )
+plt.title('Normal bivariada')
+plt.xlabel(r'$x_1$')
+plt.ylabel(r'$x_2$')
+plt.show()
+
+
+
+# Propuesta uniforme
+
+# Grafica trayectoria
+Muestra1, Muestra2 = MHnormal(tamañoMuestra= 50000,propuesta='Uniforme')
+plt.plot(Muestra1,Muestra2, linewidth = .5, color = 'gray')
+
+# Grafica contorno inicial
+print("Graficas de contorno")
+x, y = np.meshgrid(np.linspace(-2, 6, 200), 
+                   np.linspace(-2, 10, 200))
+
+pos = np.dstack((x, y))
+z = MulNor.pdf(pos)
+
+
+plt.contour(x,y,z, levels = 300,linewidths = .9 , cmap = 'inferno' )
+plt.title('Normal bivariada prop. uniforme')
+plt.xlabel(r'$x_1$')
+plt.ylabel(r'$x_2$')
+plt.show()
+
 
