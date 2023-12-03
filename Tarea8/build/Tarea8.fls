@@ -381,6 +381,13 @@ INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\zpl
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\zplmr7t.tfm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\zplmr7t.tfm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplbi8t.tfm
+INPUT .\Figures\hibrido1.png
+INPUT .\Figures\hibrido1.png
+INPUT .\Figures\hibrido1.png
+INPUT .\Figures\hibrido1.png
+INPUT .\Figures\hibrido1.png
+INPUT .\Figures\hibrido1.png
+INPUT .\Figures\hibrido1.png
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplb8t.vf
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8r.tfm
 INPUT C:\Users\ce_ra\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
@@ -421,6 +428,13 @@ INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tf
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\fplmr.tfm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplbi8t.vf
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplbi8r.tfm
+INPUT .\Figures\hibrido2.png
+INPUT .\Figures\hibrido2.png
+INPUT .\Figures\hibrido2.png
+INPUT .\Figures\hibrido2.png
+INPUT .\Figures\hibrido2.png
+INPUT .\Figures\hibrido2.png
+INPUT .\Figures\hibrido2.png
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr8t.tfm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr7t.tfm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\zplmr7m.tfm
@@ -434,6 +448,13 @@ INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\vf\public\mathpazo\zplm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\fplmri.tfm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplri8r.tfm
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplri8t.tfm
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\vf\public\mathpazo\zplmr7v.vf
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\fplmr.tfm
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplri8t.vf
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr8t.tfm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8t.tfm
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplb8t.vf
@@ -443,6 +464,8 @@ INPUT c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Comput
 INPUT c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea8\build\Tarea8.out
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb

@@ -153,10 +153,32 @@
   
 \begin{solution} 
   
+  Observemos que tenemos como distribuciones propuestas justamente las distribuciones condicionales de la distribución objetivo que es la normal bivariada. Ya hemos probado, el el caso general que estas son propuestas de Gibbs. Por tanto, tenemos que la cadena de Markov acepta con probabilidad uno cada propuesta. Luego, el método de Metropolis-Hastings se reduce a tomar realizaciones de las densidades condicionales según un kernel híbrido. Dicho kernel se diseño para que con probabilidad de un medio simule de la primer coordenada (eje x) mientras que con el resto de probabilidad simula de la condicional para la segunda coordenada (eje y). 
+
+  Además, con el fin de tener una cadena fuertemente aperiodica, en la implementación se creo un paso extra que ocurre con probabilidad de $10^{-5}$ de quedarse en el mismo punto de la cadena.
+
+  Los resultados de dichas implementaciones se muestran a continuación. Para el caso con correlación $\rho =$ 0.80
+  \begin{figure}[H] 
+      \centering 
+      \includegraphics[width = 10 cm]{Figures/hibrido1.png} 
+      \caption{Trayectoria de la simulación de la normal bivariada con correlación 0.8}
+      \label{Fig. 1.01}
+  \end{figure} 
+
+  Para la simulación de la normal bivariada con $\rho =$ 0.95
+  \begin{figure}[H] 
+      \centering 
+      \includegraphics[width = 10 cm]{Figures/hibrido2.png} 
+      \caption{Trayectoria de la simulación de la normal bivariada con correlación 0.95}
+      \label{Fig. 1.02}
+  \end{figure} 
+
+  Nótese que tenemos el comportamiento esperado en cada caso, primero vemos que al aumentar la correlación tenemos un adelgazamiento de la elipse. Luego, la trayectoria cubre satisfactoriamente las curvas de nivel de la gráfica de la normal bivariada.
+
+
 \end{solution}
   
 
-\newpage
 
 
 \begin{problem}{2} 
@@ -189,13 +211,48 @@
       Simular datos usando $\alpha = 1$ y $\lambda =1$ con $n = 20$. Para la priori usar $c= 1$ y $ b = 1$.
     \end{enumerate}
 
-
-
-
 \end{problem}
   
 \begin{solution} 
   
+La distribución objetivo es la distribución posterior que se obtiene directamente con el cálculo:
+\begin{align*}
+  f(\alpha, \lambda| \bar{t}) \propto  \prod_{i = 1}^{n} \left(\alpha \lambda t-i^{\alpha -1} e^{t_i^\alpha \lambda}\right) \cdot \frac{b^\alpha}{\Gamma(\alpha)} \lambda^{\alpha -1} e^{-\lambda b} \cdot c e^{-\alpha c} 
+\end{align*}
+para $\alpha >0$ y $\lambda > 0$. Simplificando
+\begin{align*}
+  f(\alpha, \lambda, \bar{t} ) \propto \lambda^{n+\alpha -1} e^{-\lambda(b + \sum t_i^\alpha) } \cdot \frac{\left(b\prod_{i=1}^{n} t_I\right)^\alpha }{\Gamma(\alpha)} \alpha^{n} e^{-\alpha c}
+\end{align*}
+De aquí es claro que la marginal de $\lambda$ sigue una distribución gama, es decir
+\begin{align*}
+  \lambda_p|\alpha \sim Ga(n+ \alpha, b + \sum_{i = 1}^{n} t_i^\alpha) 
+\end{align*}
+que coincide con la primer propuesta dada por en enunciado del ejercicio. Por tanto, dicha propuesta es propuesta de Gibbs.
+
+Nuevamente, implementamos el método de Metropolis-Hastings para kernel híbrido. El primer kernel, como vimos, es un kernel de Gibbs. Luego, cada propuesta se acepta siempre. Sin embargo, el segundo kernel tiene un problema, pues al tomar $ b= 1, c=1$, tenemos que es necesario que $\sum_{i = 1}^{n} \log t_i < 1$ para tener parámetro positivo. Luego, dicha condición no es frecuente, por lo que se decidió por descartar o rechazar cada propuesta donde no se satisfaga. La siguiente propuesta tiene \textit{actualizaciones} en ambos parámetros y se basa en una Metropolis-Hastings convencional, con propuesta no simétrica. El último kernel es una camina aleatoria solo en el parámetro $\alpha$ 
+
+La grafica de la trayectoria dada por la simulación es 
+\begin{align*}
+  
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{solution}
 
 \newpage

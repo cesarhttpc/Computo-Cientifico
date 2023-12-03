@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import norm, uniform, gamma
 import random 
 
-np.random.seed(21)  # 21
+np.random.seed(42)  # 21
 
 def GaussDist(x, mu = 0, sigma = 1):
 
@@ -230,10 +230,12 @@ plt.show()
 
 
 plt.hist(CadenaAlpha, bins= 30)
+plt.title(r'$\alpha$')
 plt.show()
 
         
 plt.hist(CadenaLambda, bins=30)
+plt.title(r'$\lambda$')
 plt.show()
 
 
@@ -242,7 +244,7 @@ plt.show()
 # plt.plot(CadenaLambda)
 
 
-# %%
+
 # Ejercicio 3
 
 def MetropolisHastingsGibs(t, p, tamañoMuestra = 100000):
@@ -269,7 +271,6 @@ def MetropolisHastingsGibs(t, p, tamañoMuestra = 100000):
             x[j] = gamma.rvs(a, scale = 1/b)
 
             cadena.append(x.copy())
-            
 
         else:
             
@@ -287,32 +288,41 @@ t = [94.32, 15.72, 62.88, 125.76, 5.24, 31.44, 1.05, 1.05, 2.1, 10.48]
 p = [5,1,5,14,3,17,1,1,4,22]
 
 
-
-
 cadena = np.array(MetropolisHastingsGibs(t,p))
 
 
-plt.hist(cadena[:,0],bins = 30)
+plt.hist(cadena[:,0],bins = 30, density= True)
+plt.title(r'$\beta$')
 plt.show()
-plt.hist(cadena[:,1], bins = 30)
+plt.hist(cadena[:,1], bins = 30, density= True)
+plt.title(r'$\lambda_1$')
 plt.show()
-plt.hist(cadena[:,2], bins = 30)
+plt.hist(cadena[:,2], bins = 30, density= True)
+plt.title(r'$\lambda_2$')
 plt.show()
-plt.hist(cadena[:,3], bins = 30)
+plt.hist(cadena[:,3], bins = 30, density= True)
+plt.title(r'$\lambda_3$')
 plt.show()
-plt.hist(cadena[:,4], bins = 30)
+plt.hist(cadena[:,4], bins = 30, density= True)
+plt.title(r'$\lambda_4$')
 plt.show()
-plt.hist(cadena[:,5], bins = 30)
+plt.hist(cadena[:,5], bins = 30, density= True)
+plt.title(r'$\lambda_5$')
 plt.show()
-plt.hist(cadena[:,6], bins = 30)
+plt.hist(cadena[:,6], bins = 30, density= True)
+plt.title(r'$\lambda_6$')
 plt.show()
-plt.hist(cadena[:,7], bins = 30)
+plt.hist(cadena[:,7], bins = 30, density= True)
+plt.title(r'$\lambda_7$')
 plt.show()
-plt.hist(cadena[:,8], bins = 30)
+plt.hist(cadena[:,8], bins = 30, density= True)
+plt.title(r'$\lambda_8$')
 plt.show()
-plt.hist(cadena[:,9], bins = 30)
+plt.hist(cadena[:,9], bins = 30, density= True)
+plt.title(r'$\lambda_9$')
 plt.show()
-plt.hist(cadena[:,10], bins = 30)
+plt.hist(cadena[:,10], bins = 30, density= True)
+plt.title(r'$\lambda_{10}$')
 plt.show()
 
 

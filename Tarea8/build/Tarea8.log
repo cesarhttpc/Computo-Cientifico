@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  2 DEC 2023 19:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  3 DEC 2023 05:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -837,19 +837,29 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 129.
  (C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-) [1
+)
+<Figures/hibrido1.png, id=8, 412.6617pt x 328.8285pt>
+File: Figures/hibrido1.png Graphic file (type png)
+<use Figures/hibrido1.png>
+Package pdftex.def Info: Figures/hibrido1.png  used on input line 163.
+(pdftex.def)             Requested size: 284.52756pt x 226.72633pt.
+ [1
 
 {C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Figures/EscudoCimat.png>]
+<Figures/hibrido2.png, id=24, 412.6617pt x 328.8285pt>
+File: Figures/hibrido2.png Graphic file (type png)
+<use Figures/hibrido2.png>
+Package pdftex.def Info: Figures/hibrido2.png  used on input line 171.
+(pdftex.def)             Requested size: 284.52756pt x 226.72633pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 162.
-Package mdframed Info: Not enough space on this page on input line 195.
- [2]
+(mdframed)              on input line 184.
+ [2 <./Figures/hibrido1.png> <./Figures/hibrido2.png>] [3]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 204.
-Package mdframed Info: Not enough space on this page on input line 222.
- [3] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea8\build\Tarea8.aux
+(mdframed)              on input line 256.
+Package mdframed Info: Not enough space on this page on input line 274.
+ [4] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea8\build\Tarea8.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -861,17 +871,17 @@ Package rerunfilecheck Info: File `Tarea8.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28139 strings out of 475503
- 544666 string characters out of 5761834
- 1932248 words of memory out of 5000000
- 48875 multiletter control sequences out of 15000+600000
- 587223 words of font info for 101 fonts, out of 8000000 for 9000
+ 28177 strings out of 475503
+ 545327 string characters out of 5761834
+ 1935248 words of memory out of 5000000
+ 48905 multiletter control sequences out of 15000+600000
+ 589033 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,93p,639b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea8\build\Tarea8.pdf" (3 pages, 133258 bytes).
+ 84i,15n,93p,831b,599s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea8\build\Tarea8.pdf" (4 pages, 195391 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
