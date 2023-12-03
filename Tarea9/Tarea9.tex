@@ -1,0 +1,214 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment}
+\usepackage{lipsum} 
+\usepackage{fullpage} %cambiar margen
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+
+\usepackage{amssymb,amsthm} 
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+%\usepackage[numbered]{mcode}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows,calc,positioning}
+\usepackage{mathpazo} %tipo de letra 
+\usepackage[utf8]{inputenc} %codificación
+\usepackage[T1]{fontenc} %digitación de tildes y ñ
+\usepackage[spanish]{babel} %paquete de soporte español
+
+\tikzset{
+	block/.style = {draw, rectangle,
+		minimum height=1cm,
+		minimum width=1.5cm},
+	input/.style = {coordinate,node distance=1cm},
+	output/.style = {coordinate,node distance=4cm},
+	arrow/.style={draw, -latex,node distance=2cm},
+	pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+	sum/.style = {draw, circle, node distance=1cm},
+}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+
+\usepackage{listings}
+\lstset{literate=
+  {á}{{\'a}}1
+  {é}{{\'e}}1
+  {í}{{\'i}}1
+  {ó}{{\'o}}1
+  {ú}{{\'u}}1
+  {Á}{{\'A}}1
+  {É}{{\'E}}1
+  {Í}{{\'I}}1
+  {Ó}{{\'O}}1
+  {Ú}{{\'U}}1
+  {ñ}{{\~n}}1
+  {ü}{{\"u}}1
+  {Ü}{{\"U}}1
+}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Python,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\newenvironment{problem}[2][Ejercicio]
+{ \begin{mdframed}[backgroundcolor= red!50] \textbf{#1 #2} \\}
+	{  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}
+{\textcolor{blue}{\textbf{\textit{Solución:\\\noindent}}}}
+
+
+\renewcommand{\qed}{\quad\qedsymbol}
+
+% \\	
+\begin{document}
+	\noindent
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{minipage}[b][1.2cm][t]{0.8\textwidth}
+		\large\textbf{César Isaí García Cornejo} \hfill \textbf{Tarea 9}  \\
+		cesar.cornejo@cimat.mx \hfill \\
+		\normalsize Computo Científico \hfill Semestre 3\\
+	\end{minipage}
+	
+	\hspace{14.4cm}
+	\begin{minipage}[b][0.03cm][t]{0.12\linewidth}
+		
+		\vspace{-2.2cm}
+		%%%La Ruta dependerá de donde este alojado el main y la imagen
+		\includegraphics[scale=0.3]{Figures/EscudoCimat.png}
+	\end{minipage}
+	
+	\noindent\rule{7in}{2.8pt}
+	
+	%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Problem 1
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setlength{\parskip}{\medskipamount}
+	\setlength{\parindent}{0pt}
+%/////////// Ejercicio 1 /////////////////
+
+\begin{problem}{1} 
+    En ambos problemas hay que diseñar e implementar el MCMC, investigar sobre su convergencia y tener algún grado de certeza si sí se está simulando de la posterior correspondiente. Más aún, recuerde que se trata de un problema de inferencia. Hay que hablar del problema en si, comentar sobre las posteriores simuladas y posibles estimadores ( a partir de la muestra de posterior) que se puede proporcionar de cada parámetro.
+\end{problem}
+
+\begin{problem}{(Problema en ecología)} 
+    Sean $X_1, ..., X_m$ variables aleatorias donde $X_i$ denota el número de individuos de una especie en cierta región. Suponga que $X_i|N,p\sim Binomial(N,p)$, entonces 
+    \begin{align*}
+        f(\bar{X}|N,p) = \prod_{i = 1}^{m} \frac{N!}{x_i!(N-x_i)!} p^{x_i}(1-p)^{N-x_i}.
+    \end{align*}
+    Asumiendo la distribución a priori $p\sim Beta(\alpha,\beta)$ y $N\sim h(\cdot)$, donde $h$ es una dist. discreta en $\{0,1,2,...,N_{max}\}$, se tiene definida la distribución posterior $f(N,P|\bar{x})$.
+    A partir del algoritmo MH, simule valores de a distribución posterior usando un kernel híbirido. Para ello considere como sugerencia la siguiente distribución inicial para el MCMC 
+    \begin{align*}
+        p \sim U(0,1)   \:\:\:\: y \:\:\:\: N\sim U_d \left \{  \max_{i\in \{1,...,m\} } (x_i), \max_{i\in \{1,...,m\} } (x_i) + 1, ..., N_{max} \right \}
+    \end{align*}
+    y las propuestas
+    \begin{enumerate}
+        \item Propuesta 1: De la condicional total de p (kener Gibbs).
+        \item Propuesta 2: De la a priori
+        \item Propuesta 3: Propuesta hipergeométrica
+        \item Propuesta 4: Poisson: $N_p \sim \max_{i \in \{1,...,m\} }(x_i) + Poisson(\cdot)$.
+        \item Propuesta 5: Caminata aleatoria 
+        \begin{align*}
+            N_p = N + \varepsilon, \:\:\:\: \mathbb{P}\left (\varepsilon = 1 \right ) = \frac{1}{2} = \mathbb{P}\left (\varepsilon = -1 \right )    
+        \end{align*}
+    \end{enumerate}
+    Los datos son estos: 7,7,8,8,9,4,7,5,5,6,9,8,11,7,5,5,7,3,10,3.
+
+    A priori, esperamos que sea difícil observar a los individuos entonces $\alpha = 1, \beta = 20$ . La especie no es muy abundadnte y entonces $N_{max} = 1000$ y $h(N) = 1/(N_{max} +1); N \in \{0,1,2,...,N_{max}\}$.
+    Las propuestas y distribución inicial para el MCMC de arriba son solamente sugerencia, propongan otras propuestas, experimente y comenten.
+\end{problem}
+
+
+\begin{solution} 
+    
+\end{solution}
+
+\begin{problem}{(Estudio de mercado)} 
+    Se tiene un producto y se realiza una encuesta con el fin de estudiar cuánto se consume dependiendo de la edad. Sea $Y_i$ el monto de compra y $X_i$ la covariable la cuál representa la edad. Sea $Y_i$ el monto de compra y $X_i$ la covariable la cual representa la edad. 
+
+    Suponga que $Y_i \sim Po(\lambda_i)$ 
+    \begin{align*}
+        \lambda_i  = cg _b(x_i -a)
+    \end{align*}
+    para $g_b$ la siguiente función  de liga
+    \begin{align*}
+        g_b(x) = \exp \left(-\frac{-x^2}{2b^2}  \right) 
+    \end{align*}
+    O sea, se trata de regresión Poisson con una función de liga no usual. Si $\lambda_i = 0$ entonces $\mathbb{P}\left (Y_i = 0 \right ) = 1. $a = años  medios del segmento (años), c = gastos promedio (pesos), b = `amplitud' del segmento (años). 
+
+    Considere la distribución a priori 
+    \begin{align*}
+        \alpha \sim N(35, 5) , \:\:\:\: c \sim Gama(3,3/350) \:\:\:\: b \sim Gama(2,2/5).
+    \end{align*}
+
+    El segundo parámetro  de la normal es la desviación estándar y el segundo parámetro de las gamas es la taza.
+
+    Usando MH simule de la distribución posterior de a, c y b.
+    Los datos son estos n= 100.
+
+
+\end{problem}
+
+\begin{solution} 
+    
+\end{solution}
+
+\begin{problem}{3} 
+    Investiga y describe brevemente los softwares OpenBugs, Nimble, JAGS, DRAM, Rtwalk, Mcee Hammer, PyMCMC.
+\end{problem}
+
+
+
+
+\begin{thebibliography}{9}
+
+    \bibitem{Casella}
+    Robert, C. P., Casella, G., and Casella, G. (1999). Monte Carlo statistical methods (Vol. 2). New York: Springer.
+
+    \bibitem{Wasserman}
+    Wasserman, L. (2004). All of statistics: a concise course in statistical inference (p. 413). New York: Springer.
+    
+\end{thebibliography}
+      
+
+
+
+
+\end{document}
