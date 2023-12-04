@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  3 DEC 2023 05:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  4 DEC 2023 03:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -851,15 +851,111 @@ File: Figures/hibrido2.png Graphic file (type png)
 <use Figures/hibrido2.png>
 Package pdftex.def Info: Figures/hibrido2.png  used on input line 171.
 (pdftex.def)             Requested size: 284.52756pt x 226.72633pt.
+<Figures/histograma_1_1.png, id=25, 395.3169pt x 314.3745pt>
+File: Figures/histograma_1_1.png Graphic file (type png)
+<use Figures/histograma_1_1.png>
+Package pdftex.def Info: Figures/histograma_1_1.png  used on input line 181.
+(pdftex.def)             Requested size: 284.52756pt x 226.2679pt.
+<Figures/histograma_1_2.png, id=26, 395.3169pt x 314.3745pt>
+File: Figures/histograma_1_2.png Graphic file (type png)
+<use Figures/histograma_1_2.png>
+Package pdftex.def Info: Figures/histograma_1_2.png  used on input line 187.
+(pdftex.def)             Requested size: 284.52756pt x 226.2679pt.
+ [2 <./Figures/hibrido1.png> <./Figures/hibrido2.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 184.
- [2 <./Figures/hibrido1.png> <./Figures/hibrido2.png>] [3]
+(mdframed)              on input line 198.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 228.
+ [3 <./Figures/histograma_1_1.png> <./Figures/histograma_1_2.png>]
+<Figures/trayectoria_2.png, id=43, 410.4936pt x 328.8285pt>
+File: Figures/trayectoria_2.png Graphic file (type png)
+<use Figures/trayectoria_2.png>
+Package pdftex.def Info: Figures/trayectoria_2.png  used on input line 251.
+(pdftex.def)             Requested size: 284.52756pt x 227.93555pt.
+ [4]
+<Figures/histograma_2_alpha.png, id=53, 411.2163pt x 314.3745pt>
+File: Figures/histograma_2_alpha.png Graphic file (type png)
+<use Figures/histograma_2_alpha.png>
+Package pdftex.def Info: Figures/histograma_2_alpha.png  used on input line 261.
+(pdftex.def)             Requested size: 284.52756pt x 217.53264pt.
+<Figures/histograma_2_lambda.png, id=54, 411.2163pt x 314.3745pt>
+File: Figures/histograma_2_lambda.png Graphic file (type png)
+<use Figures/histograma_2_lambda.png>
+Package pdftex.def Info: Figures/histograma_2_lambda.png  used on input line 267.
+(pdftex.def)             Requested size: 284.52756pt x 217.53264pt.
+ [5 <./Figures/trayectoria_2.png> <./Figures/histograma_2_alpha.png>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 273.
+ (C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 275.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 256.
-Package mdframed Info: Not enough space on this page on input line 274.
- [4] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea8\build\Tarea8.aux
+(mdframed)              on input line 286.
+ [6 <./Figures/histograma_2_lambda.png>]
+<Figures/histograma3_beta.png, id=73, 395.3169pt x 315.8199pt>
+File: Figures/histograma3_beta.png Graphic file (type png)
+<use Figures/histograma3_beta.png>
+Package pdftex.def Info: Figures/histograma3_beta.png  used on input line 330.
+(pdftex.def)             Requested size: 284.52756pt x 227.30823pt.
+<Figures/histograma3_1.png, id=74, 392.4261pt x 315.8199pt>
+File: Figures/histograma3_1.png Graphic file (type png)
+<use Figures/histograma3_1.png>
+Package pdftex.def Info: Figures/histograma3_1.png  used on input line 336.
+(pdftex.def)             Requested size: 284.52756pt x 228.99487pt.
+<Figures/histograma3_2.png, id=75, 385.9218pt x 315.8199pt>
+File: Figures/histograma3_2.png Graphic file (type png)
+<use Figures/histograma3_2.png>
+Package pdftex.def Info: Figures/histograma3_2.png  used on input line 342.
+(pdftex.def)             Requested size: 284.52756pt x 232.8501pt.
+ [7 <./Figures/histograma3_beta.png>]
+<Figures/histograma3_3.png, id=83, 392.4261pt x 315.8199pt>
+File: Figures/histograma3_3.png Graphic file (type png)
+<use Figures/histograma3_3.png>
+Package pdftex.def Info: Figures/histograma3_3.png  used on input line 348.
+(pdftex.def)             Requested size: 284.52756pt x 228.99487pt.
+<Figures/histograma3_4.png, id=84, 392.4261pt x 315.8199pt>
+File: Figures/histograma3_4.png Graphic file (type png)
+<use Figures/histograma3_4.png>
+Package pdftex.def Info: Figures/histograma3_4.png  used on input line 354.
+(pdftex.def)             Requested size: 284.52756pt x 228.99487pt.
+ [8 <./Figures/histograma3_1.png> <./Figures/histograma3_2.png>]
+<Figures/histograma3_5.png, id=93, 395.3169pt x 315.8199pt>
+File: Figures/histograma3_5.png Graphic file (type png)
+<use Figures/histograma3_5.png>
+Package pdftex.def Info: Figures/histograma3_5.png  used on input line 360.
+(pdftex.def)             Requested size: 284.52756pt x 227.30823pt.
+<Figures/histograma3_6.png, id=94, 395.3169pt x 315.8199pt>
+File: Figures/histograma3_6.png Graphic file (type png)
+<use Figures/histograma3_6.png>
+Package pdftex.def Info: Figures/histograma3_6.png  used on input line 366.
+(pdftex.def)             Requested size: 284.52756pt x 227.30823pt.
+ [9 <./Figures/histograma3_3.png> <./Figures/histograma3_4.png>]
+<Figures/histograma3_7.png, id=103, 395.3169pt x 315.8199pt>
+File: Figures/histograma3_7.png Graphic file (type png)
+<use Figures/histograma3_7.png>
+Package pdftex.def Info: Figures/histograma3_7.png  used on input line 372.
+(pdftex.def)             Requested size: 284.52756pt x 227.30823pt.
+<Figures/histograma3_8.png, id=104, 395.3169pt x 315.8199pt>
+File: Figures/histograma3_8.png Graphic file (type png)
+<use Figures/histograma3_8.png>
+Package pdftex.def Info: Figures/histograma3_8.png  used on input line 378.
+(pdftex.def)             Requested size: 284.52756pt x 227.30823pt.
+ [10 <./Figures/histograma3_5.png> <./Figures/histograma3_6.png>]
+<Figures/histograma3_9.png, id=113, 395.3169pt x 315.8199pt>
+File: Figures/histograma3_9.png Graphic file (type png)
+<use Figures/histograma3_9.png>
+Package pdftex.def Info: Figures/histograma3_9.png  used on input line 384.
+(pdftex.def)             Requested size: 284.52756pt x 227.30823pt.
+<Figures/histograma3_10.png, id=114, 395.3169pt x 315.8199pt>
+File: Figures/histograma3_10.png Graphic file (type png)
+<use Figures/histograma3_10.png>
+Package pdftex.def Info: Figures/histograma3_10.png  used on input line 390.
+(pdftex.def)             Requested size: 284.52756pt x 227.30823pt.
+ [11 <./Figures/histograma3_7.png> <./Figures/histograma3_8.png>] [12 <./Figures/histograma3_9.png> <./Figures/histograma3_10.png>] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea8\build\Tarea8.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -871,17 +967,17 @@ Package rerunfilecheck Info: File `Tarea8.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28177 strings out of 475503
- 545327 string characters out of 5761834
- 1935248 words of memory out of 5000000
- 48905 multiletter control sequences out of 15000+600000
- 589033 words of font info for 106 fonts, out of 8000000 for 9000
+ 28768 strings out of 475503
+ 553576 string characters out of 5761834
+ 1942248 words of memory out of 5000000
+ 49466 multiletter control sequences out of 15000+600000
+ 590277 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,93p,831b,599s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea8\build\Tarea8.pdf" (4 pages, 195391 bytes).
+ 84i,15n,93p,831b,1303s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\ce_ra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea8\build\Tarea8.pdf" (12 pages, 382377 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

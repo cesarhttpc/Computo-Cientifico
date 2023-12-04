@@ -175,6 +175,20 @@
 
   Nótese que tenemos el comportamiento esperado en cada caso, primero vemos que al aumentar la correlación tenemos un adelgazamiento de la elipse. Luego, la trayectoria cubre satisfactoriamente las curvas de nivel de la gráfica de la normal bivariada.
 
+  Observemos por completitud que efectivamente las marginales distribuyen normales, como vemos en los siguientes gráficas
+  \begin{figure}[H] 
+      \centering 
+      \includegraphics[width = 10 cm]{Figures/histograma_1_1.png} 
+      \caption{Histograma de cada componente para $\rho = 0.80$}
+      \label{Fig. 1.03}
+  \end{figure} 
+  \begin{figure}[H] 
+      \centering 
+      \includegraphics[width = 10 cm]{Figures/histograma_1_2.png} 
+      \caption{Histograma de cada componente para $\rho = 0.95$}
+      \label{Fig. 1.04}
+  \end{figure} 
+  lo que concluye el análisis.
 
 \end{solution}
   
@@ -232,30 +246,41 @@ que coincide con la primer propuesta dada por en enunciado del ejercicio. Por ta
 Nuevamente, implementamos el método de Metropolis-Hastings para kernel híbrido. El primer kernel, como vimos, es un kernel de Gibbs. Luego, cada propuesta se acepta siempre. Sin embargo, el segundo kernel tiene un problema, pues al tomar $ b= 1, c=1$, tenemos que es necesario que $\sum_{i = 1}^{n} \log t_i < 1$ para tener parámetro positivo. Luego, dicha condición no es frecuente, por lo que se decidió por descartar o rechazar cada propuesta donde no se satisfaga. La siguiente propuesta tiene \textit{actualizaciones} en ambos parámetros y se basa en una Metropolis-Hastings convencional, con propuesta no simétrica. El último kernel es una camina aleatoria solo en el parámetro $\alpha$ 
 
 La grafica de la trayectoria dada por la simulación es 
-\begin{align*}
-  
-\end{align*}
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width = 10 cm]{Figures/trayectoria_2.png} 
+    \caption{Trayectoria de la cadena por MCMC.}
+    \label{Fig. 2.01}
+\end{figure} 
 
+Los kerneles en este caso se decidió tomar no equiprobable ya que las simulaciones del segundo kernel aumentan considerablemente los valores de $\lambda$. 
 
+Para ver los resultados más claramente, obtenemos los histogramas de cada componente
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width = 10 cm]{Figures/histograma_2_alpha.png} 
+    \caption{Histograma para la marginal $\alpha$ de la posterior.}
+    \label{Fig. 2.02}
+\end{figure} 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width = 10 cm]{Figures/histograma_2_lambda.png} 
+    \caption{Histograma para la marginal $\lambda$ de la posterior.}
+    \label{Fig. 2.03}
+\end{figure} 
 
-
-
-
-
-
-
-
-
-
-
-
+Para obtener una estimación puntual de los valores de $\alpha$ y $\lambda$ simplemente tomamos la media, que nos dá
+\begin{lstlisting}
+Media muestral para alpha:  1.0079571771956224
+Media muestral para lambda: 0.9836892081931157
+\end{lstlisting}
+Luego, tenemos una estimación posterior considerable para la distribución de los datos, pues recordemos que dichos datos son realizaciones de la Weibull($\alpha = 1, \lambda= 1$).
 
 
 
 
 \end{solution}
 
-\newpage
 
 
 \begin{problem}{3} 
@@ -279,13 +304,103 @@ La grafica de la trayectoria dada por la simulación es
 \end{problem}
 
 
+\begin{solution} 
+  Empezaremos por mostrar que en efecto la propuesta correspondiente son propuestas de Gibbs. Consideremos la verosimilitud
+  \begin{align*}
+    \mathcal{L}(\bar{p},\lambda,\beta) = \prod_{i = 1}^{n} \frac{(\lambda_i p_i)^{p_i}}{p_i!}e^{-\lambda_i t_i}
+  \end{align*}
+  Por tanto, la distribución posterior es
+  \begin{align*}
+    f(\lambda_1, \cdots, \lambda_n,\beta|\bar{p}) &\propto \mathcal{L}(\bar{p},\bar{\lambda},\beta) f(\lambda_1,\cdots,\lambda_n,\beta)\\
+    & \propto \mathcal{L}(\bar{p},\bar{\lambda},\beta) f(\lambda_1,\beta)f(\lambda_2,\beta)\cdots f(\lambda_n,\beta)f(\beta)\\
+    &\propto \left(\prod_{i} \lambda_i^{p_i}\right) e^{-\sum_{i} \lambda_i t_i} \cdot \frac{\beta^\alpha}{\Gamma(\alpha)} \lambda_1 ^{\alpha-1} e^{-\beta \lambda_1} \cdots \frac{\beta^\alpha}{\Gamma(\alpha)} \lambda_n ^{\alpha-1} e^{-\beta \lambda_n}\cdot \beta^{\gamma-1} e^{-\delta \beta}
+  \end{align*}
+  Agrupando a cada término tenemos que 
+  \begin{align*}
+    f(\lambda_1, \cdots, \lambda_n,\beta|\bar{p}) & \propto \left(\prod_{i} \lambda_i^{p_i}\right) e^{-\sum_{i} \lambda_i t_i} \cdot \lambda_1 ^{\alpha-1} e^{-\beta \lambda_1} \cdots  \lambda_n ^{\alpha-1} e^{-\beta \lambda_n}\cdot \beta^{n\alpha +\gamma-1} e^{-\delta \beta}\\
+    & \propto \left(\prod_{i} \lambda_i^{p_i}\right) e^{-\sum_{i} \lambda_i t_i} \cdot \lambda_1 ^{\alpha-1} \cdots  \lambda_n ^{\alpha-1} \cdot \beta^{n\alpha +\gamma-1} e^{-(\delta + \sum \lambda_i )\beta}\\
+    & \propto \lambda_1 ^{p_1 + \alpha-1} e^{-(t_1 + \beta)\lambda_1}\cdots \lambda_n ^{p_n + \alpha-1} e^{-(t_n + \beta)\lambda_n}\cdot \beta^{n\alpha + \gamma-1} e^{-(\delta + \sum \lambda_i )\beta}
+  \end{align*}
+
+  De aquí, tomando las marginales es claro que $\lambda_i|\lambda_{-i},\beta, \bar{t} \sim Gama(p_i + \alpha, \beta + t_i)$ y con el último término tenemos que $\beta|\bar{\lambda},\bar{t} \sim Gama(n \alpha + \gamma, \delta + \sum \lambda_i)$. 
+
+  Ahora, nos enfocaremos en los resultados de la implementación. Tras usar el método de Metropolis-Hastings con el kernel híbrido, donde cada kernel es equiprobable, tenemos que tras 100000 iteraciones los siguientes histogramas de las distribuciones marginales para cada componte de la distribución objetivo. Nótese que tenemos una distribución objetivo en 11 dimensiones
+  \begin{figure}[H] 
+      \centering 
+      \includegraphics[width = 10 cm]{Figures/histograma3_beta.png} 
+      \caption{Histograma de la marginal de la posterior de $\beta$.}
+      \label{Fig. 3.01}
+  \end{figure} 
+  \begin{figure}[H] 
+    \centering 
+    \includegraphics[width = 10 cm]{Figures/histograma3_1.png} 
+    \caption{Histograma de la marginal de la posterior de $\lambda_1$.}
+    \label{Fig. 3.02}
+\end{figure} 
+\begin{figure}[H] 
+  \centering 
+  \includegraphics[width = 10 cm]{Figures/histograma3_2.png} 
+  \caption{Histograma de la marginal de la posterior de $\lambda_2$.}
+  \label{Fig. 3.03}
+\end{figure} 
+\begin{figure}[H] 
+  \centering 
+  \includegraphics[width = 10 cm]{Figures/histograma3_3.png} 
+  \caption{Histograma de la marginal de la posterior de $\lambda_3$.}
+  \label{Fig. 3.04}
+\end{figure} 
+\begin{figure}[H] 
+  \centering 
+  \includegraphics[width = 10 cm]{Figures/histograma3_4.png} 
+  \caption{Histograma de la marginal de la posterior de $\lambda_4$.}
+  \label{Fig. 3.05}
+\end{figure} 
+\begin{figure}[H] 
+  \centering 
+  \includegraphics[width = 10 cm]{Figures/histograma3_5.png} 
+  \caption{Histograma de la marginal de la posterior de $\lambda_5$.}
+  \label{Fig. 3.06}
+\end{figure} 
+\begin{figure}[H] 
+  \centering 
+  \includegraphics[width = 10 cm]{Figures/histograma3_6.png} 
+  \caption{Histograma de la marginal de la posterior de $\lambda_6$.}
+  \label{Fig. 3.07}
+\end{figure} 
+\begin{figure}[H] 
+  \centering 
+  \includegraphics[width = 10 cm]{Figures/histograma3_7.png} 
+  \caption{Histograma de la marginal de la posterior de $\lambda_7$.}
+  \label{Fig. 3.08}
+\end{figure} 
+\begin{figure}[H] 
+  \centering 
+  \includegraphics[width = 10 cm]{Figures/histograma3_8.png} 
+  \caption{Histograma de la marginal de la posterior de $\lambda_8$.}
+  \label{Fig. 3.09}
+\end{figure} 
+\begin{figure}[H] 
+  \centering 
+  \includegraphics[width = 10 cm]{Figures/histograma3_9.png} 
+  \caption{Histograma de la marginal de la posterior de $\lambda_9$.}
+  \label{Fig. 3.10}
+\end{figure} 
+\begin{figure}[H] 
+  \centering 
+  \includegraphics[width = 10 cm]{Figures/histograma3_10.png} 
+  \caption{Histograma de la marginal de la posterior de $\lambda_10$.}
+  \label{Fig. 3.11}
+\end{figure} 
+
+\end{solution}
+
 \begin{thebibliography}{9}
 
     \bibitem{Casella}
     Robert, C. P., Casella, G., and Casella, G. (1999). Monte Carlo statistical methods (Vol. 2). New York: Springer.
 
-    \bibitem{Wasserman}
-    Wasserman, L. (2004). All of statistics: a concise course in statistical inference (p. 413). New York: Springer.
+    % \bibitem{Wasserman}
+    % Wasserman, L. (2004). All of statistics: a concise course in statistical inference (p. 413). New York: Springer.
     
 \end{thebibliography}
       

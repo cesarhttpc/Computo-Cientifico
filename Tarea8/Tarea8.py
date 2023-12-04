@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import norm, uniform, gamma
 import random 
 
-np.random.seed(42)  # 21
+np.random.seed(17)  # 21
 
 def GaussDist(x, mu = 0, sigma = 1):
 
@@ -89,6 +89,10 @@ plt.ylabel(r'$y$')
 plt.show()
 
 
+plt.hist(MuestraX,bins=50, alpha = 0.8,density= True, label= 'x')
+plt.hist(MuestraY,bins=50,alpha = 0.8, density= True, label= 'y')
+plt.title("Histograma para x,y con rho = 0.80")
+plt.show()
 
 rho = 0.95
 
@@ -107,6 +111,10 @@ plt.xlabel(r'$x$')
 plt.ylabel(r'$y$')
 plt.show()
 
+plt.hist(MuestraX,bins=50, alpha = 0.8 , density= True, label= 'x')
+plt.hist(MuestraY,bins=50, alpha = 0.8 , density= True, label= 'y')
+plt.title("Histograma para x,y con rho = 0.95")
+plt.show()
 
 
 # Ejercicio 2
@@ -119,26 +127,22 @@ def LogObjetivo(alpha, lamda, t):
 
     n = len(t)
     p = np.prod(t)
-    s = sum(t**alpha)
+    s = np.sum(t**alpha)
+
 
     f = (n + alpha -1)*np.log(lamda) - lamda *(s + 1) + alpha *np.log(p) - np.log(Fgamma(alpha)) + n*np.log(alpha) - alpha 
     
     return f
 
 
-def LogPropuesta3_1(alpha, lamda, alpha_p, lamda_p):
-
-    return -alpha -np.log(Fgamma(alpha_p)) + (alpha_p-1)*np.log(lamda_p)- lamda_p
-
-
 def LogPropuesta3(alpha, lamda):
 
     return -alpha -np.log(Fgamma(alpha)) + (alpha-1)*np.log(lamda)- lamda
 
-def MetropolisHastingsHibrido(t,tamañoMuestra = 10000):
+def MetropolisHastingsHibrido(t,tamañoMuestra = 100000):
 
     # Punto inicial
-    x_0 = np.array([10,10])
+    x_0 = np.array([1,1])
 
     CadenaAlpha  = np.zeros(tamañoMuestra)  # alpha
     CadenaLambda = np.zeros(tamañoMuestra)  # lambda
@@ -149,19 +153,19 @@ def MetropolisHastingsHibrido(t,tamañoMuestra = 10000):
     for k in range(tamañoMuestra-1):
 
         # Kernel híbrido
-        indices = [1,2,3,4]
-        j = random.choice(indices)
+
+        j = uniform.rvs(0,1)
 
         # Simulación de propuesta
-        if j == 1:
+        if j <= 0.000:
 
             alpha = CadenaAlpha[k]
 
             CadenaAlpha[k+1] = CadenaAlpha[k]
-            CadenaLambda[k+1] = gamma.rvs(alpha + 20 , 1/(1 +  sum(t**alpha)))
+            CadenaLambda[k+1] = gamma.rvs(alpha + 20 , 1/(1 +  np.sum(t**alpha)))
 
 
-        elif j == 2:
+        elif (j > 0.000 and   j <=0.02):
 
             CadenaLambda[k+1] = CadenaLambda[k]
 
@@ -174,7 +178,9 @@ def MetropolisHastingsHibrido(t,tamañoMuestra = 10000):
                 CadenaAlpha[k+1] = CadenaAlpha[k]
 
 
-        elif j == 3:
+
+
+        elif j <= 0.5:
 
             alpha_p = expon.rvs(0) 
             lamda_p = gamma.rvs(alpha_p, scale = 1)
@@ -222,34 +228,26 @@ t = expon.rvs(0,size = 20)
 CadenaAlpha, CadenaLambda  = MetropolisHastingsHibrido(t)
 
 
-plt.plot(CadenaAlpha,CadenaLambda)
+
+plt.plot(CadenaAlpha,CadenaLambda,linewidth = .5, color = 'teal')
 plt.title('MCMC')
 plt.xlabel(r'$\alpha$')
 plt.ylabel(r'$\lambda$')
 plt.show()
 
-
-plt.hist(CadenaAlpha, bins= 30)
+plt.hist(CadenaAlpha, bins= 50)
 plt.title(r'$\alpha$')
 plt.show()
-
         
-plt.hist(CadenaLambda, bins=30)
+plt.hist(CadenaLambda, bins=50)
 plt.title(r'$\lambda$')
 plt.show()
-
-
 
 # plt.plot(CadenaAlpha)
 # plt.plot(CadenaLambda)
 
-print(np.mean(CadenaAlpha))
-print(np.mean(CadenaLambda))
-
-
-
-# %%
-
+print("Media muestral para alpha: " ,np.mean(CadenaAlpha))
+print("Media muestral para lambda:", np.mean(CadenaLambda))
 
 
 # Ejercicio 3
@@ -298,39 +296,40 @@ p = [5,1,5,14,3,17,1,1,4,22]
 cadena = np.array(MetropolisHastingsGibs(t,p))
 
 
-plt.hist(cadena[:,0],bins = 30, density= True)
+plt.hist(cadena[:,0],bins = 50, density= True)
 plt.title(r'$\beta$')
 plt.show()
-plt.hist(cadena[:,1], bins = 30, density= True)
+plt.hist(cadena[:,1], bins = 50, density= True)
 plt.title(r'$\lambda_1$')
 plt.show()
-plt.hist(cadena[:,2], bins = 30, density= True)
+plt.hist(cadena[:,2], bins = 50, density= True)
 plt.title(r'$\lambda_2$')
 plt.show()
-plt.hist(cadena[:,3], bins = 30, density= True)
+plt.hist(cadena[:,3], bins = 50, density= True)
 plt.title(r'$\lambda_3$')
 plt.show()
-plt.hist(cadena[:,4], bins = 30, density= True)
+plt.hist(cadena[:,4], bins = 50, density= True)
 plt.title(r'$\lambda_4$')
 plt.show()
-plt.hist(cadena[:,5], bins = 30, density= True)
+plt.hist(cadena[:,5], bins = 50, density= True)
 plt.title(r'$\lambda_5$')
 plt.show()
-plt.hist(cadena[:,6], bins = 30, density= True)
+plt.hist(cadena[:,6], bins = 50, density= True)
 plt.title(r'$\lambda_6$')
 plt.show()
-plt.hist(cadena[:,7], bins = 30, density= True)
+plt.hist(cadena[:,7], bins = 50, density= True)
 plt.title(r'$\lambda_7$')
 plt.show()
-plt.hist(cadena[:,8], bins = 30, density= True)
+plt.hist(cadena[:,8], bins = 50, density= True)
 plt.title(r'$\lambda_8$')
 plt.show()
-plt.hist(cadena[:,9], bins = 30, density= True)
+plt.hist(cadena[:,9], bins = 50, density= True)
 plt.title(r'$\lambda_9$')
 plt.show()
-plt.hist(cadena[:,10], bins = 30, density= True)
+plt.hist(cadena[:,10], bins = 50, density= True)
 plt.title(r'$\lambda_{10}$')
 plt.show()
+plt.plot(cadena, alpha = 0.9)
 
 
 
