@@ -1,6 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1701447645 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea9/Tarea9.tex" "build/Tarea9.pdf" "Tarea9" 1701447647 0
+["pdflatex"] 1701702397 "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea9/Tarea9.tex" "build/Tarea9.pdf" "Tarea9" 1701702400 0
   "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693352630 82507 a9eef8696c92627b87e9975edea03b2a ""
+  "C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt0900.pk" 1693352510 17512 6cd01f20f980e28056100ce70ea12289 ""
   "C:/Users/ce_ra/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1693352273 24120579 85898b25958cf632ec7946174c56943b ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136793854 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -11,6 +12,7 @@
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplr8r.tfm" 1136793854 2796 d37c29814a6717720ee1a7c9a0b2c3b8 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplr8t.tfm" 1136793854 3820 ee5b9d58608ae328e43c6e2bfd4ff851 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplri8r.tfm" 1136793854 2720 70000d5e623e601132eab3cded5b819b ""
+  "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ectt0900.tfm" 993062338 1348 c9911882a95d2c1b82f0cccb2c651de8 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1233951854 908 2921f8a10601f252058503cc6570e581 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmex10.tfm" 1136765053 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
@@ -149,6 +151,7 @@
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty" 1687174146 5119 50695b8f743569fbac71a83f7ef51fe2 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/base/inputenc.sty" 1687174146 5048 4a74b0804469fbfae7849704c4687a07 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/base/size11.clo" 1687174146 8464 a4a9a859b7fd5b6c1450673c4d301348 ""
+  "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/base/t1cmtt.fd" 1687174146 2443 955a820f7890344dc6c6ca236a5c2990 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/comment/comment.sty" 1468691282 10197 204f75d5d8d88aa345a8c402e879e63b ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.sty" 1561039820 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1623003186 13886 d1306dcf79a944f6988e688c1785f9ce ""
@@ -215,10 +218,14 @@
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1650051284 2245 c8a4088d07cffc2e5207730c738edd76 ""
   "C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1650051284 20785 71a3d72ab517959a6979c27e6176bec1 ""
   "Figures/EscudoCimat.png" 1697603232 23978 afd125464800623154e6cd8f9742e14b ""
-  "Tarea9.tex" 1701447644 7768 45149db887b6485c39494119874a98ee ""
-  "build/Tarea9.aux" 1701447647 795 e415bcffd724c4841fedeee2084ee9cf "pdflatex"
-  "build/Tarea9.out" 1701447646 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea9/Tarea9.tex" 1701447644 7768 45149db887b6485c39494119874a98ee ""
+  "Figures/evolución.png" 1701698969 38636 433b01260604fbdd96294a9d04d13d88 ""
+  "Figures/p.png" 1701699019 13076 e336ae8b8fee132fd7036a111ff385f1 ""
+  "Figures/trayectoria.png" 1701697247 30683 086c604b34ebd10bbd5ddaf43d6fdfed ""
+  "Figures/trayectoria_burn.png" 1701699006 58852 6cefbb7261fd9d09ea9e5bb0f4c30a4f ""
+  "Tarea9.tex" 1701702395 16755 0fccc90eacf2c14d79ba3be26179e6eb ""
+  "build/Tarea9.aux" 1701702400 2038 83fab314203e2c0cf739376229c5d97c "pdflatex"
+  "build/Tarea9.out" 1701702399 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "c:/Users/ce_ra/Documents/CIMAT/Semestres/Tercero/Computo Cientifico/Computo Cientifico/Tarea9/Tarea9.tex" 1701702395 16755 0fccc90eacf2c14d79ba3be26179e6eb ""
   (generated)
   "build/Tarea9.aux"
   "build/Tarea9.log"

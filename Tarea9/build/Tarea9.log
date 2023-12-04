@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  1 DEC 2023 10:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.29)  4 DEC 2023 09:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -844,17 +844,50 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 150.
  (C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 163.
- [1
+) [1
 
 {C:/Users/ce_ra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Figures/EscudoCimat.png>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 175.
+ (C:\Users\ce_ra\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 177.
+<Figures/trayectoria.png, id=29, 419.166pt x 329.5512pt>
+File: Figures/trayectoria.png Graphic file (type png)
+<use Figures/trayectoria.png>
+Package pdftex.def Info: Figures/trayectoria.png  used on input line 190.
+(pdftex.def)             Requested size: 284.52756pt x 223.6996pt.
+ [2 <./Figures/trayectoria.png>]
+<Figures/evolución.png, id=43, 404.712pt x 333.1647pt>
+File: Figures/evolución.png Graphic file (type png)
+<use Figures/evolución.png>
+Package pdftex.def Info: Figures/evolución.png  used on input line 199.
+(pdftex.def)             Requested size: 284.52756pt x 234.2406pt.
+<Figures/trayectoria_burn.png, id=44, 419.166pt x 329.5512pt>
+File: Figures/trayectoria_burn.png Graphic file (type png)
+<use Figures/trayectoria_burn.png>
+Package pdftex.def Info: Figures/trayectoria_burn.png  used on input line 209.
+(pdftex.def)             Requested size: 284.52756pt x 223.6996pt.
+<Figures/p.png, id=45, 392.4261pt x 314.3745pt>
+File: Figures/p.png Graphic file (type png)
+<use Figures/p.png>
+Package pdftex.def Info: Figures/p.png  used on input line 216.
+(pdftex.def)             Requested size: 284.52756pt x 227.94684pt.
+ [3 <./Figures/evolución.png> <./Figures/trayectoria_burn.png>]
+File: Figures/p.png Graphic file (type png)
+<use Figures/p.png>
+Package pdftex.def Info: Figures/p.png  used on input line 223.
+(pdftex.def)             Requested size: 284.52756pt x 227.94684pt.
+ [4 <./Figures/p.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 193.
- [2] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea9\build\Tarea9.aux
+(mdframed)              on input line 251.
+Package mdframed Info: Not enough space on this page on input line 275.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 281.
+ [5] [6] (c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea9\build\Tarea9.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -866,17 +899,17 @@ Package rerunfilecheck Info: File `Tarea9.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28142 strings out of 475503
- 544773 string characters out of 5761834
- 1943248 words of memory out of 5000000
- 48874 multiletter control sequences out of 15000+600000
- 583414 words of font info for 95 fonts, out of 8000000 for 9000
+ 28648 strings out of 475503
+ 550184 string characters out of 5761834
+ 1953248 words of memory out of 5000000
+ 49358 multiletter control sequences out of 15000+600000
+ 584658 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,93p,639b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea9\build\Tarea9.pdf" (2 pages, 138391 bytes).
+ 84i,12n,93p,799b,1295s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\ce_ra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ce_ra/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on "c:\Users\ce_ra\Documents\CIMAT\Semestres\Tercero\Computo Cientifico\Computo Cientifico\Tarea9\build\Tarea9.pdf" (6 pages, 267724 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 167 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

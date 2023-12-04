@@ -23,7 +23,7 @@ def betadist(p):
     return 19*np.log( 1- p )
 
 
-def MetropolisHastingsHibrido(x,tamañoMuestra = 10000):
+def MetropolisHastingsHibrido(x,tamañoMuestra = 100000):
 
     # Punto inicial
     N_max = 1000
@@ -48,13 +48,13 @@ def MetropolisHastingsHibrido(x,tamañoMuestra = 10000):
 
             Cadena_N[k+1] = Cadena_N[k]
             a = np.sum(x) +1
-            l = len(x)*Cadena_N[k]- np.sum(x) + 20
-            p = gamma.rvs(a, scale = 1/l)
+            b = len(x)*Cadena_N[k]- np.sum(x) + 20
+            p = beta.rvs(a, b)
 
             f_y = objetivo(p, Cadena_N[k], x)
             f_x = objetivo(Cadena_p[k],Cadena_N[k],x)
-            q_y = gamma.logpdf(p,a,scale = 1/l)
-            q_x = gamma.logpdf(Cadena_p[k], a,scale = 1/l)
+            q_y = gamma.logpdf(p,a,b)
+            q_x = gamma.logpdf(Cadena_p[k], a, b)
 
             if np.exp(f_y - f_x + q_x - q_y) > uniform.rvs(0,1):
                 Cadena_p[k+1] = p
@@ -142,24 +142,39 @@ x = np.array([7,7,8,8,9,4,7,5,5,6,9,8,11,7,5,5,7,3,10,3])
 
 Cadena_p, Cadena_N = MetropolisHastingsHibrido(x)
 
-plt.plot(Cadena_p,Cadena_N)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # %%
 
 
-# hypergeom.rvs(10,5)
-hypergeom.logpmf(154,10000,2000, 800)
-hypergeom.rvs(10000,2000,800)
+plt.plot(Cadena_p,Cadena_N)
+plt.xlabel(r'$p$')
+plt.ylabel(r'$N$')
+plt.title('Trayectoria de la cadena por MCMC')
+plt.show()
+
+fig, axs = plt.subplots(2)
+fig.suptitle('Primeros pasos en la cadena de Markov')
+axs[0].plot(Cadena_p[:4000], label = 'p')
+axs[1].plot(Cadena_N[:4000], label = 'N')
+plt.show()
+
+plt.plot(Cadena_p[1000:],Cadena_N[1000:])
+plt.xlabel(r'$p$')
+plt.ylabel(r'$N$')
+plt.title('Trayectoria de la cadena por MCMC (burn-in)')
+plt.show()
+
+plt.hist(Cadena_p[1000:], density= True,bins= 20)
+plt.title('Histograma de la posterior de p')
+plt.show()
+
+plt.hist(Cadena_N[1000:], density= True,bins= 20)
+plt.title('Histograma de la posterior de N')
+plt.show()
+
+print("Media muestral para p: " ,np.mean(Cadena_p))
+print("Media muestral para N:", np.mean(Cadena_N))
+
+
+
+
+
