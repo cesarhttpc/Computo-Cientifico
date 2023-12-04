@@ -243,6 +243,13 @@ plt.show()
 # plt.plot(CadenaAlpha)
 # plt.plot(CadenaLambda)
 
+print(np.mean(CadenaAlpha))
+print(np.mean(CadenaLambda))
+
+
+
+# %%
+
 
 
 # Ejercicio 3
